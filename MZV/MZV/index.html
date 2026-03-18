@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Manual da ZV-E10</title>
 
+    <!-- 1. PRIORIDADE ZERO (LCP): Pré-carregamento da Capa do Vídeo (Hero) -->
+    <link rel="preload" fetchpriority="high" as="image" href="https://images.converteai.net/808eb86e-5343-4bb3-a93a-b5c65c959b16/players/6967f439fc0e7a38b23cad29/thumbnail.jpg" type="image/webp">
+
     <!-- VTurb: Otimização de Performance (LCP) - Preload e DNS Prefetch -->
     <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
     <link rel="preload" href="https://scripts.converteai.net/808eb86e-5343-4bb3-a93a-b5c65c959b16/players/6967f439fc0e7a38b23cad29/v4/player.js" as="script" fetchpriority="high">
@@ -15,7 +18,6 @@
     <link rel="dns-prefetch" href="https://scripts.converteai.net">
     <link rel="dns-prefetch" href="https://images.converteai.net">
     <link rel="dns-prefetch" href="https://api.vturb.com.br">
-    <link rel="preload" fetchpriority="high" as="image" href="https://images.converteai.net/808eb86e-5343-4bb3-a93a-b5c65c959b16/players/6967f439fc0e7a38b23cad29/thumbnail.jpg" type="image/webp">
 
     <!-- Fonte Inter utilizada no Design System GenLabs -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,42 +25,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
 
-    <!-- Tailwind CSS (via CDN conforme solicitado) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        // Cores exatas do Design System GenLabs Reference
-                        zinc: {
-                            50: '#fafafa',
-                            100: '#f4f4f5',
-                            200: '#e4e4e7',
-                            400: '#a1a1aa',
-                            500: '#71717a',
-                            600: '#52525b',
-                            900: '#18181b',
-                        },
-                        // Accent Colors (Botões e destaque)
-                        orange: {
-                            400: '#fb923c',
-                            500: '#f97316',
-                            600: '#ea580c',
-                        }
-                    },
-                    boxShadow: {
-                        'hero': '0 25px 50px -12px rgba(0, 0, 0, 0.05)',
-                        'inner-glow': 'inset 0 0 0 1px rgba(255, 255, 255, 0.5)',
-                        'xl-soft': '0 20px 25px -5px rgba(24, 24, 27, 0.05), 0 8px 10px -6px rgba(24, 24, 27, 0.01)',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- 2. ATRASO INTELIGENTE: Scripts não críticos movidos para o final -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -164,11 +131,11 @@
         }
     </style>
 
-    <!-- VTurb: Carregamento otimizado do player (usa os preloads acima) -->
+    <!-- 3. VTURB DEFER: Carregamento sem bloqueio -->
     <script type="text/javascript">
         var s = document.createElement("script");
         s.src = "https://scripts.converteai.net/808eb86e-5343-4bb3-a93a-b5c65c959b16/players/6967f439fc0e7a38b23cad29/v4/player.js";
-        s.async = !0;
+        s.defer = true;
         document.head.appendChild(s);
     </script>
 </head>
@@ -1395,6 +1362,26 @@
                 }
             }, 500);
         })();
+    </script>
+    <!-- 4. TAILWIND E SCRIPTS SECUNDÁRIOS: Carregamento Assíncrono no Final -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        zinc: { 50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 900: '#18181b' },
+                        orange: { 400: '#fb923c', 500: '#f97316', 600: '#ea580c' }
+                    },
+                    boxShadow: {
+                        'hero': '0 25px 50px -12px rgba(0, 0, 0, 0.05)',
+                        'inner-glow': 'inset 0 0 0 1px rgba(255, 255, 255, 0.5)',
+                        'xl-soft': '0 20px 25px -5px rgba(24, 24, 27, 0.05), 0 8px 10px -6px rgba(24, 24, 27, 0.01)',
+                    }
+                }
+            }
+        }
     </script>
 </body>
 
