@@ -1318,9 +1318,9 @@
         </div>
     </main>
 
-    <!-- Scripts para funcionamento dos Accordions da Landing Page (Diferidos para Performance) -->
+    <!-- Scripts para funcionamento dos Accordions da Landing Page -->
     <script>
-        function loadNonCriticalScripts() {
+        document.addEventListener('DOMContentLoaded', () => {
             // Script para os Accordions Módulos
             const accordionHeaders = document.querySelectorAll('.accordion-header');
 
@@ -1362,6 +1362,7 @@
                     }
                 });
             });
+
             // Script para os Accordions FAQ
             const faqHeaders = document.querySelectorAll('.faq-header');
 
@@ -1405,11 +1406,8 @@
                     }
                 });
             });
-        }
-
-        // Carrega após o primeiro scroll ou 2s de ócio
-        window.addEventListener('scroll', loadNonCriticalScripts, { once: true });
-        setTimeout(loadNonCriticalScripts, 2000);
+        });
+    </script>
     </script>
     <script>
         setTimeout(function () {
