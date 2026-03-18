@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Manual da ZV-E10</title>
 
     <!-- Fonte Inter utilizada no Design System GenLabs -->
@@ -89,6 +89,7 @@
 
         .animate-scroll {
             animation: scroll 40s linear infinite;
+            will-change: transform;
         }
 
         .animate-scroll:hover {
@@ -246,7 +247,7 @@
 
         <!-- Seção de Depoimentos Scrollável (Logo abaixo do vídeo) -->
         <div class="esconder">
-        <div class="animate-fade-up delay-300 w-full mt-16 sm:mt-20 overflow-hidden relative">
+        <div class="animate-fade-up delay-300 w-full mt-16 sm:mt-20 overflow-hidden overflow-x-hidden relative" style="width:100%;overflow-x:hidden;position:relative;">
 
             <!-- Vignette effects nas bordas (gradient fade) -->
             <div
