@@ -1326,7 +1326,7 @@
         </div>
     </main>
 
-    <!-- Scripts de Interatividade (Lazy Loaded para Performance Elite) -->
+    <!-- Scripts de Interatividade (Lazy Loaded 3s para Performance Elite) -->
     <script>
         window.addEventListener('load', () => {
             setTimeout(() => {
@@ -1376,26 +1376,25 @@
                 lucideScript.onload = () => lucide.createIcons();
                 document.body.appendChild(lucideScript);
 
-            }, 2000); // 2 segundos de atraso real
+            }, 3000); // 3 segundos para scripts secundários
         });
     </script>
     <script>
-        setTimeout(function () {
-            (function () {
-                var delaySeconds = 668; // 11:08
-                var checkPlayer = setInterval(function () {
-                    var player = document.querySelector("vturb-smartplayer");
-                    if (player) {
-                        clearInterval(checkPlayer);
-                        player.addEventListener("player:ready", function () {
-                            player.displayHiddenElements(delaySeconds, [".esconder"], {
-                                persist: true
-                            });
+        // Sincronização VTurb (Execução Imediata para prioridade máxima)
+        (function () {
+            var delaySeconds = 668; // 11:08
+            var checkPlayer = setInterval(function () {
+                var player = document.querySelector("vturb-smartplayer");
+                if (player) {
+                    clearInterval(checkPlayer);
+                    player.addEventListener("player:ready", function () {
+                        player.displayHiddenElements(delaySeconds, [".esconder"], {
+                            persist: true
                         });
-                    }
-                }, 500);
-            })();
-        }, 200);
+                    });
+                }
+            }, 500);
+        })();
     </script>
 </body>
 
