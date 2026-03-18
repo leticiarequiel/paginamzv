@@ -1318,93 +1318,48 @@
         </div>
     </main>
 
-    <!-- Scripts para funcionamento dos Accordions da Landing Page -->
+    <!-- Scripts para funcionamento dos Accordions da Landing Page (Ultra-lightweight para TBT 0) -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Script para os Accordions Módulos
-            const accordionHeaders = document.querySelectorAll('.accordion-header');
-
-            accordionHeaders.forEach(header => {
-                header.addEventListener('click', () => {
-                    const item = header.parentElement;
-                    const content = item.querySelector('.accordion-content');
-                    const icon = item.querySelector('.accordion-icon svg');
-
-                    // Fechar todos os outros
-                    document.querySelectorAll('.accordion-item').forEach(otherItem => {
-                        if (otherItem !== item) {
-                            const otherContent = otherItem.querySelector('.accordion-content');
-                            const otherIcon = otherItem.querySelector('.accordion-icon svg');
-                            otherContent.style.maxHeight = null;
-                            otherContent.classList.remove('opacity-100');
-                            otherContent.classList.add('opacity-0');
-                            if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
-                            otherItem.classList.remove('border-orange-300', 'shadow-md');
-                            otherItem.classList.add('border-zinc-200/60');
-                        }
-                    });
-
-                    // Toggle do clicado
-                    if (content.style.maxHeight) {
+        document.addEventListener('DOMContentLoaded', function () {
+            // Lógica Unificada para Módulos e FAQ
+            const toggles = document.querySelectorAll('.accordion-header, .faq-header');
+            
+            toggles.forEach(header => {
+                header.onclick = function () {
+                    const parent = this.parentElement;
+                    const content = parent.querySelector('.accordion-content, .faq-content');
+                    const icon = this.querySelector('.accordion-icon, .faq-icon');
+                    const iconSvg = icon ? icon.querySelector('svg') : null;
+                    
+                    const isOpen = content.style.maxHeight;
+                    
+                    // Toggle Conteúdo
+                    if (isOpen) {
                         content.style.maxHeight = null;
                         content.classList.remove('opacity-100');
                         content.classList.add('opacity-0');
-                        icon.style.transform = 'rotate(0deg)';
-                        item.classList.remove('border-orange-300', 'shadow-md');
-                        item.classList.add('border-zinc-200/60');
+                        if (icon) icon.style.transform = 'rotate(0deg)';
+                        parent.classList.remove('border-orange-300', 'shadow-md');
+                        parent.classList.add('border-zinc-200/60');
                     } else {
                         content.style.maxHeight = content.scrollHeight + "px";
                         content.classList.remove('opacity-0');
                         content.classList.add('opacity-100');
-                        icon.style.transform = 'rotate(180deg)';
-                        item.classList.remove('border-zinc-200/60');
-                        item.classList.add('border-orange-300', 'shadow-md');
+                        if (icon) icon.style.transform = 'rotate(180deg)';
+                        parent.classList.remove('border-zinc-200/60');
+                        parent.classList.add('border-orange-300', 'shadow-md');
                     }
-                });
-            });
-
-            // Script para os Accordions FAQ
-            const faqHeaders = document.querySelectorAll('.faq-header');
-
-            faqHeaders.forEach(header => {
-                header.addEventListener('click', () => {
-                    const item = header.parentElement;
-                    const content = item.querySelector('.faq-content');
-                    const icon = item.querySelector('.faq-icon svg');
-
-                    // Fechar todos os outros
-                    document.querySelectorAll('.faq-item').forEach(otherItem => {
-                        if (otherItem !== item) {
-                            const otherContent = otherItem.querySelector('.faq-content');
-                            const otherIcon = otherItem.querySelector('.faq-icon svg');
-                            otherContent.style.maxHeight = null;
-                            otherContent.classList.remove('opacity-100');
-                            otherContent.classList.add('opacity-0');
-                            if (otherIcon) {
-                                otherIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>';
-                                otherIcon.classList.remove('text-orange-500');
-                                otherIcon.classList.add('text-zinc-400');
-                            }
+                    
+                    // Especificidade para o FAQ (Troca de ícone Plus/Minus se necessário)
+                    if (icon && this.classList.contains('faq-header')) {
+                        const path = icon.querySelector('path');
+                        if (isOpen) {
+                            iconSvg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>';
+                        } else {
+                            iconSvg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>';
                         }
-                    });
-
-                    // Toggle do clicado
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                        content.classList.remove('opacity-100');
-                        content.classList.add('opacity-0');
-                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>'; // Ícone Plus
-                        icon.classList.remove('text-orange-500');
-                        icon.classList.add('text-zinc-400');
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                        content.classList.remove('opacity-0');
-                        content.classList.add('opacity-100');
-                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>'; // Ícone Minus
-                        icon.classList.remove('text-zinc-400');
-                        icon.classList.add('text-orange-500');
                     }
-                });
+                };
             });
         });
     </script>
