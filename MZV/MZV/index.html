@@ -64,6 +64,33 @@
             font-family: 'Inter', sans-serif;
             background-color: #fafafa;
             color: #18181b;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Critical Hero Layout Skeleton */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 2.5rem;
+            padding-bottom: 4rem;
+            position: relative;
+        }
+
+        .hero-container {
+            width: 100%;
+            max-width: 64rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         /* Glass Panel Styling para a Hero e Elementos Centrais */
@@ -72,7 +99,6 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(228, 228, 231, 0.5);
-            /* zinc-200 com opacidade */
         }
 
         /* Grid Background Pattern */
@@ -87,15 +113,8 @@
 
         /* Animação para o Marquee de Depoimentos */
         @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(calc(-50% - 0.75rem));
-            }
-
-            /* Ajustado para bater com o gap exatamente */
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 0.75rem)); }
         }
 
         .animate-scroll {
@@ -107,7 +126,7 @@
             animation-play-state: paused;
         }
 
-        /* Accent Gradients - Baseados na paleta extraída */
+        /* Accent Gradients */
         .text-gradient {
             background-clip: text;
             -webkit-background-clip: text;
@@ -121,38 +140,27 @@
 
         /* Smooth fade in animation for hero load */
         @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .animate-fade-up {
             animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .delay-100 {
-            animation-delay: 100ms;
-            opacity: 0;
-        }
+        .delay-100 { animation-delay: 100ms; opacity: 0; }
+        .delay-200 { animation-delay: 200ms; opacity: 0; }
+        .delay-300 { animation-delay: 300ms; opacity: 0; }
 
-        .delay-200 {
-            animation-delay: 200ms;
-            opacity: 0;
-        }
+        .esconder { display: none !important; }
 
-        .delay-300 {
-            animation-delay: 300ms;
-            opacity: 0;
+        /* Mobile Adjustments for Critical Paint */
+        @media (max-width: 640px) {
+            .hero-section { padding-top: 1.5rem; }
+            h1 { font-size: 2.25rem !important; line-height: 1.1 !important; text-align: center; margin-bottom: 2rem !important; }
         }
-
-        .esconder {
-            display: none !important;
+        @media (min-width: 1024px) {
+            h1 { font-size: 4rem !important; line-height: 0.95 !important; }
         }
     </style>
 
@@ -276,47 +284,47 @@
                 <div class="flex items-center gap-4 sm:gap-6">
                     <div
                         class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_0584.JPEG" alt="Depoimento"
+                        <img src="assets/img/testimonials/IMG_0584.JPEG" alt="Depoimento" loading="lazy" decoding="async"
+                            class="w-full h-auto rounded-xl object-contain" loading="lazy" decoding="async" />
+                    </div>
+                    <div
+                        class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
+                        <img src="assets/img/testimonials/IMG_3519.JPEG" alt="Depoimento" loading="lazy" decoding="async"
                             class="w-full h-auto rounded-xl object-contain" />
                     </div>
                     <div
                         class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_3519.JPEG" alt="Depoimento"
+                        <img src="assets/img/testimonials/IMG_4610.JPEG" alt="Depoimento" loading="lazy" decoding="async"
                             class="w-full h-auto rounded-xl object-contain" />
                     </div>
                     <div
                         class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_4610.JPEG" alt="Depoimento"
+                        <img src="assets/img/testimonials/IMG_4860.JPEG" alt="Depoimento" loading="lazy" decoding="async"
                             class="w-full h-auto rounded-xl object-contain" />
                     </div>
                     <div
                         class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_4860.JPEG" alt="Depoimento"
+                        <img src="assets/img/testimonials/IMG_9227.JPEG" alt="Depoimento" loading="lazy" decoding="async"
                             class="w-full h-auto rounded-xl object-contain" />
                     </div>
                     <div
                         class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_9227.JPEG" alt="Depoimento"
+                        <img src="assets/img/testimonials/IMG_9273.JPEG" alt="Depoimento" loading="lazy" decoding="async"
                             class="w-full h-auto rounded-xl object-contain" />
                     </div>
                     <div
                         class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_9273.JPEG" alt="Depoimento"
+                        <img src="assets/img/testimonials/IMG_9300.JPEG" alt="Depoimento" loading="lazy" decoding="async"
                             class="w-full h-auto rounded-xl object-contain" />
                     </div>
                     <div
                         class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_9300.JPEG" alt="Depoimento"
+                        <img src="assets/img/testimonials/IMG_9301.JPEG" alt="Depoimento" loading="lazy" decoding="async"
                             class="w-full h-auto rounded-xl object-contain" />
                     </div>
                     <div
                         class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_9301.JPEG" alt="Depoimento"
-                            class="w-full h-auto rounded-xl object-contain" />
-                    </div>
-                    <div
-                        class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_9302.JPEG" alt="Depoimento"
+                        <img src="assets/img/testimonials/IMG_9302.JPEG" alt="Depoimento" loading="lazy" decoding="async"
                             class="w-full h-auto rounded-xl object-contain" />
                     </div>
                 </div>
@@ -325,47 +333,47 @@
                 <div class="flex items-center gap-4 sm:gap-6">
                     <div
                         class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_0584.JPEG" alt="Depoimento"
+                        <img src="assets/img/testimonials/IMG_0584.JPEG" alt="Depoimento" loading="lazy" decoding="async"
+                            class="w-full h-auto rounded-xl object-contain" loading="lazy" decoding="async" />
+                    </div>
+                    <div
+                        class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
+                        <img src="assets/img/testimonials/IMG_3519.JPEG" alt="Depoimento" loading="lazy" decoding="async"
                             class="w-full h-auto rounded-xl object-contain" />
                     </div>
                     <div
                         class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_3519.JPEG" alt="Depoimento"
+                        <img src="assets/img/testimonials/IMG_4610.JPEG" alt="Depoimento" loading="lazy" decoding="async"
                             class="w-full h-auto rounded-xl object-contain" />
                     </div>
                     <div
                         class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_4610.JPEG" alt="Depoimento"
+                        <img src="assets/img/testimonials/IMG_4860.JPEG" alt="Depoimento" loading="lazy" decoding="async"
                             class="w-full h-auto rounded-xl object-contain" />
                     </div>
                     <div
                         class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_4860.JPEG" alt="Depoimento"
+                        <img src="assets/img/testimonials/IMG_9227.JPEG" alt="Depoimento" loading="lazy" decoding="async"
                             class="w-full h-auto rounded-xl object-contain" />
                     </div>
                     <div
                         class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_9227.JPEG" alt="Depoimento"
+                        <img src="assets/img/testimonials/IMG_9273.JPEG" alt="Depoimento" loading="lazy" decoding="async"
                             class="w-full h-auto rounded-xl object-contain" />
                     </div>
                     <div
                         class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_9273.JPEG" alt="Depoimento"
+                        <img src="assets/img/testimonials/IMG_9300.JPEG" alt="Depoimento" loading="lazy" decoding="async"
                             class="w-full h-auto rounded-xl object-contain" />
                     </div>
                     <div
                         class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_9300.JPEG" alt="Depoimento"
+                        <img src="assets/img/testimonials/IMG_9301.JPEG" alt="Depoimento" loading="lazy" decoding="async"
                             class="w-full h-auto rounded-xl object-contain" />
                     </div>
                     <div
                         class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_9301.JPEG" alt="Depoimento"
-                            class="w-full h-auto rounded-xl object-contain" />
-                    </div>
-                    <div
-                        class="w-64 sm:w-80 flex-shrink-0 glass-panel p-2 rounded-2xl border border-zinc-200/50 shadow-sm hover:shadow-md transition-shadow">
-                        <img src="assets/img/testimonials/IMG_9302.JPEG" alt="Depoimento"
+                        <img src="assets/img/testimonials/IMG_9302.JPEG" alt="Depoimento" loading="lazy" decoding="async"
                             class="w-full h-auto rounded-xl object-contain" />
                     </div>
                 </div>
@@ -767,7 +775,7 @@
 
                     <!-- Imagem Esquerda (Mobile: Topo / Desktop: Metade Direita adaptável) -->
                     <div class="w-full md:w-1/2 h-56 md:h-auto relative overflow-hidden order-1 md:order-2">
-                        <img src="assets/img/features/davinci.png" alt="DaVinci Resolve"
+                        <img src="assets/img/features/davinci.png" alt="DaVinci Resolve" loading="lazy" decoding="async"
                             class="absolute inset-0 w-full h-full object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-700 filter saturate-75 group-hover:saturate-100"
                             onerror="this.src='https://placehold.co/800x600/18181b/ea580c?text=DaVinci+Resolve'" />
                         <div
@@ -806,7 +814,7 @@
                 <!-- Bônus 2: Iluminação -->
                 <div
                     class="glass-panel group rounded-[2rem] overflow-hidden border border-zinc-200/60 relative flex flex-col hover:shadow-xl transition-all duration-500 bg-white/40">
-                    <img src="assets/img/features/iluminacao.png" alt="Iluminação de Estúdio"
+                    <img src="assets/img/features/iluminacao.png" alt="Iluminação de Estúdio" loading="lazy" decoding="async"
                         class="w-full h-48 sm:h-56 object-cover object-top scale-100 group-hover:scale-105 transition-transform duration-700 z-0"
                         onerror="this.src='https://placehold.co/400x300/f4f4f5/ea580c?text=Iluminação'" />
                     <div class="absolute top-0 right-0 p-4 z-10">
@@ -841,7 +849,7 @@
                 <!-- Bônus 3: Compras -->
                 <div
                     class="glass-panel group rounded-[2rem] overflow-hidden border border-zinc-200/60 relative flex flex-col hover:shadow-xl transition-all duration-500 bg-white/40">
-                    <img src="assets/img/features/compras.png" alt="Guia de Compras"
+                    <img src="assets/img/features/compras.png" alt="Guia de Compras" loading="lazy" decoding="async"
                         class="w-full h-48 sm:h-56 object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-700 z-0"
                         onerror="this.src='https://placehold.co/400x300/f4f4f5/ea580c?text=Guia+de+Compras'" />
                     <div class="absolute top-0 right-0 p-4 z-10">
@@ -876,7 +884,7 @@
                 <!-- Bônus 4: Checklist -->
                 <div
                     class="glass-panel group rounded-[2rem] overflow-hidden border border-zinc-200/60 relative flex flex-col hover:shadow-xl transition-all duration-500 bg-white/40">
-                    <img src="assets/img/features/checklist-anti-erro.png" alt="Checklist Anti-Erro"
+                    <img src="assets/img/features/checklist-anti-erro.png" alt="Checklist Anti-Erro" loading="lazy" decoding="async"
                         class="w-full h-48 sm:h-56 object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-700 z-0"
                         onerror="this.src='https://placehold.co/400x300/f4f4f5/ea580c?text=Checklist'" />
                     <div class="absolute top-0 right-0 p-4 z-10">
@@ -911,8 +919,8 @@
                 <div
                     class="glass-panel group rounded-[2rem] overflow-hidden border border-zinc-200/60 relative flex flex-col hover:shadow-xl transition-all duration-500 bg-white/40">
                     <img src="assets/img/features/ao-vivo.jpg" alt="Aulas ao Vivo"
-                        class="w-full h-48 sm:h-56 object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-700 z-0"
-                        onerror="this.src='https://placehold.co/400x300/f4f4f5/ea580c?text=Ao+Vivo'" />
+                        class="w-full h-auto rounded-xl object-cover shadow-sm group-hover:scale-105 transition-transform duration-500"
+                        onerror="this.src='https://placehold.co/400x300/f4f4f5/ea580c?text=Ao+Vivo'" loading="lazy" decoding="async" />
                     <div class="absolute top-0 right-0 p-4 z-10">
                         <div
                             class="w-10 h-10 rounded-full bg-white/90 backdrop-blur shadow-sm flex items-center justify-center">
@@ -1085,7 +1093,7 @@
                     <div class="z-10 relative flex items-center justify-center">
                         <div class="absolute w-32 h-32 bg-orange-300 rounded-full blur-[40px] opacity-40"></div>
                         <img src="https://api.iconify.design/solar:shield-check-bold-duotone.svg?color=%23ea580c"
-                            alt="Garantia" class="w-24 h-24 sm:w-28 sm:h-28 drop-shadow-md relative z-10" />
+                            alt="Garantia" loading="lazy" decoding="async" class="w-24 h-24 sm:w-28 sm:h-28 drop-shadow-md relative z-10" loading="lazy" decoding="async" />
                     </div>
                     <h4
                         class="text-4xl font-black tracking-tighter text-orange-600 mt-4 relative z-10 text-center leading-none">
@@ -1318,55 +1326,63 @@
         </div>
     </main>
 
-    <!-- Scripts para funcionamento dos Accordions da Landing Page (Ultra-lightweight para TBT 0) -->
+    <!-- Scripts de Interatividade (Lazy Loaded para Performance Elite) -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Lógica Unificada para Módulos e FAQ
-            const toggles = document.querySelectorAll('.accordion-header, .faq-header');
-            
-            toggles.forEach(header => {
-                header.onclick = function () {
-                    const parent = this.parentElement;
-                    const content = parent.querySelector('.accordion-content, .faq-content');
-                    const icon = this.querySelector('.accordion-icon, .faq-icon');
-                    const iconSvg = icon ? icon.querySelector('svg') : null;
-                    
-                    const isOpen = content.style.maxHeight;
-                    
-                    // Toggle Conteúdo
-                    if (isOpen) {
-                        content.style.maxHeight = null;
-                        content.classList.remove('opacity-100');
-                        content.classList.add('opacity-0');
-                        if (icon) icon.style.transform = 'rotate(0deg)';
-                        parent.classList.remove('border-orange-300', 'shadow-md');
-                        parent.classList.add('border-zinc-200/60');
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                        content.classList.remove('opacity-0');
-                        content.classList.add('opacity-100');
-                        if (icon) icon.style.transform = 'rotate(180deg)';
-                        parent.classList.remove('border-zinc-200/60');
-                        parent.classList.add('border-orange-300', 'shadow-md');
-                    }
-                    
-                    // Especificidade para o FAQ (Troca de ícone Plus/Minus se necessário)
-                    if (icon && this.classList.contains('faq-header')) {
-                        const path = icon.querySelector('path');
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                // Restaurar funcionalidade das sanfonas (FAQ e Módulos)
+                const toggles = document.querySelectorAll('.accordion-header, .faq-header');
+                toggles.forEach(header => {
+                    header.onclick = function () {
+                        const parent = this.parentElement;
+                        const content = parent.querySelector('.accordion-content, .faq-content');
+                        const icon = this.querySelector('.accordion-icon, .faq-icon');
+                        const iconSvg = icon ? icon.querySelector('svg') : null;
+                        const isOpen = content.style.maxHeight;
+
                         if (isOpen) {
-                            iconSvg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>';
+                            content.style.maxHeight = null;
+                            content.classList.remove('opacity-100');
+                            content.classList.add('opacity-0');
+                            if (icon) icon.style.transform = 'rotate(0deg)';
+                            parent.classList.remove('border-orange-300', 'shadow-md');
+                            parent.classList.add('border-zinc-200/60');
                         } else {
-                            iconSvg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>';
+                            content.style.maxHeight = content.scrollHeight + "px";
+                            content.classList.remove('opacity-0');
+                            content.classList.add('opacity-100');
+                            if (icon) icon.style.transform = 'rotate(180deg)';
+                            parent.classList.remove('border-zinc-200/60');
+                            parent.classList.add('border-orange-300', 'shadow-md');
                         }
-                    }
-                };
-            });
+
+                        if (icon && this.classList.contains('faq-header')) {
+                            if (isOpen) {
+                                iconSvg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>';
+                            } else {
+                                iconSvg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>';
+                            }
+                        }
+                    };
+                });
+
+                // Carregar scripts de ícones de forma assíncrona
+                const iconScript = document.createElement("script");
+                iconScript.src = "https://code.iconify.design/3/3.1.0/iconify.min.js";
+                document.body.appendChild(iconScript);
+                
+                const lucideScript = document.createElement("script");
+                lucideScript.src = "https://unpkg.com/lucide@latest";
+                lucideScript.onload = () => lucide.createIcons();
+                document.body.appendChild(lucideScript);
+
+            }, 2000); // 2 segundos de atraso real
         });
     </script>
     <script>
         setTimeout(function () {
             (function () {
-                var delaySeconds = 668; // 11:08 convertidos para segundos
+                var delaySeconds = 668; // 11:08
                 var checkPlayer = setInterval(function () {
                     var player = document.querySelector("vturb-smartplayer");
                     if (player) {
