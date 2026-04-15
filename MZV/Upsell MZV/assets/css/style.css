@@ -30,14 +30,14 @@
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(74, 222, 128, 0.5) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(249, 115, 22, 0.5) 100%);
             pointer-events: none;
         }
 
         .glass-panel {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(74, 222, 128, 0.2);
+            border: 1px solid rgba(249, 115, 22, 0.2);
         }
 
         @keyframes fadeSlideIn {
@@ -48,9 +48,9 @@
         .animate-on-scroll.animate { animation: fadeSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         
         @keyframes textGlow {
-            0% { text-shadow: 0 0 20px rgba(74, 222, 128, 0.1); }
-            50% { text-shadow: 0 0 40px rgba(74, 222, 128, 0.4); }
-            100% { text-shadow: 0 0 20px rgba(74, 222, 128, 0.1); }
+            0% { text-shadow: 0 0 20px rgba(249, 115, 22, 0.1); }
+            50% { text-shadow: 0 0 40px rgba(249, 115, 22, 0.4); }
+            100% { text-shadow: 0 0 20px rgba(249, 115, 22, 0.1); }
         }
         .text-glow { animation: textGlow 4s ease-in-out infinite; }
 
@@ -60,8 +60,8 @@
         }
         .floating-card:hover {
             transform: scale(1.02) translateY(-5px);
-            border-color: rgba(74, 222, 128, 0.4);
-            box-shadow: 0 20px 40px -10px rgba(74, 222, 128, 0.1);
+            border-color: rgba(249, 115, 22, 0.4);
+            box-shadow: 0 20px 40px -10px rgba(249, 115, 22, 0.1);
         }
 
         .beam-border-h {
@@ -70,7 +70,7 @@
         }
         .beam-border-h::after {
             content: ''; position: absolute; inset: 0;
-            background: linear-gradient(to right, transparent, #4ADE80, transparent);
+            background: linear-gradient(to right, transparent, #f97316, transparent);
             transform: translateX(-100%);
             animation: beam-slide 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
         }
@@ -80,8 +80,8 @@
         }
 
         .shadow-glow {
-            box-shadow: 0 0 20px rgba(74, 222, 128, 0.2);
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);
         }
         .shadow-glow:hover {
-            box-shadow: 0 0 40px rgba(74, 222, 128, 0.4);
+            box-shadow: 0 0 40px rgba(249, 115, 22, 0.4);
         }
