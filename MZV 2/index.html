@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Manual da ZV-E10</title>
+    <title>Manual da ZV-E10 · Black</title>
 
     <!-- 1. PRIORIDADE ZERO (LCP): Pré-carregamento da Capa do Vídeo (Hero) -->
     <link rel="preload" fetchpriority="high" as="image" href="https://images.converteai.net/808eb86e-5343-4bb3-a93a-b5c65c959b16/players/6967f439fc0e7a38b23cad29/thumbnail.webp" type="image/webp">
@@ -19,18 +19,18 @@
     <link rel="dns-prefetch" href="https://images.converteai.net">
     <link rel="dns-prefetch" href="https://api.vturb.com.br">
 
-    <!-- Fonte Inter utilizada no Design System GenLabs -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
+    <!-- Fontes do Design System Rodrigo Baião (locais) -->
+    <meta name="theme-color" content="#141211" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="preload" href="assets/ds/fonts/Poppins-Medium.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/ds/fonts/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- 2. ATRASO INTELIGENTE: Scripts não críticos movidos para o final -->
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #fafafa;
-            color: #18181b;
+            font-family: 'Poppins', system-ui, sans-serif;
+            background-color: #141211;
+            color: #f4efe8;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -62,18 +62,19 @@
 
         /* Glass Panel Styling para a Hero e Elementos Centrais */
         .glass-panel {
-            background: rgba(255, 255, 255, 0.90);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(228, 228, 231, 0.5);
+            background: linear-gradient(rgba(28,26,24,.74), rgba(28,26,24,.74)) padding-box, linear-gradient(150deg, rgba(244,239,232,.34), rgba(244,239,232,.05) 42%, rgba(196,138,85,.55)) border-box;
+            backdrop-filter: blur(14px) saturate(1.2);
+            -webkit-backdrop-filter: blur(14px) saturate(1.2);
+            border: 1px solid transparent;
+            box-shadow: 0 2px 4px rgba(0,0,0,.35), 0 24px 60px -24px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.06);
         }
 
         /* Grid Background Pattern */
         .bg-grid {
             background-size: 40px 40px;
             background-image:
-                linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+                linear-gradient(to right, rgba(244, 239, 232, 0.06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(244, 239, 232, 0.06) 1px, transparent 1px);
             mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
             -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
         }
@@ -98,7 +99,7 @@
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            background-image: linear-gradient(to right, #ea580c, #fb923c);
+            background-image: linear-gradient(100deg, #c48a55 0%, #e6b07a 52%, #f6dcc0 100%);
         }
 
         .subtle-overlay {
@@ -119,6 +120,98 @@
         .delay-200 { animation-delay: 200ms; opacity: 0; }
         .delay-300 { animation-delay: 300ms; opacity: 0; }
 
+        /* ===== Design System · Rodrigo Baião · tema escuro ===== */
+        @font-face{font-family:'Poppins';font-weight:400;font-style:normal;font-display:swap;src:url('assets/ds/fonts/Poppins-Regular.woff2') format('woff2');}
+        @font-face{font-family:'Poppins';font-weight:500;font-style:normal;font-display:swap;src:url('assets/ds/fonts/Poppins-Medium.woff2') format('woff2');}
+        @font-face{font-family:'Poppins';font-weight:600;font-style:normal;font-display:swap;src:url('assets/ds/fonts/Poppins-SemiBold.woff2') format('woff2');}
+        @font-face{font-family:'Poppins';font-weight:700;font-style:normal;font-display:swap;src:url('assets/ds/fonts/Poppins-Bold.woff2') format('woff2');}
+        @font-face{font-family:'Poppins';font-weight:800 900;font-style:normal;font-display:swap;src:url('assets/ds/fonts/Poppins-ExtraBold.woff2') format('woff2');}
+        @font-face{font-family:'Merriweather';font-weight:400;font-style:italic;font-display:swap;src:url('assets/ds/fonts/Merriweather-Italic-Regular.woff2') format('woff2');}
+        html{background:#141211;}
+        .emph{font-family:'Merriweather',Georgia,serif; font-style:italic; font-weight:400 !important; letter-spacing:-0.01em; font-size:.94em;}
+        ::selection{background:rgba(196,138,85,.4); color:#fff;}
+        a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #e6b07a; outline-offset:3px;}
+        .logo-ds{display:block; height:24px; width:auto; opacity:.85;}
+
+        /* brilho quente no topo (um por tela) */
+        body::after{content:""; position:fixed; z-index:0; pointer-events:none; top:-220px; left:50%; width:900px; height:640px; transform:translateX(-50%);
+            background:radial-gradient(closest-side, rgba(196,138,85,.22), rgba(196,138,85,0));}
+        /* as bolhas do fundo eram "multiply" (só funciona no claro) */
+        .mix-blend-multiply{mix-blend-mode:screen;}
+
+        /* texto branco passa a creme; painéis que eram brancos viram vidro escuro */
+        .text-white{color:#f4efe8 !important;}
+        .glass-panel{border-color:transparent !important;}
+        .bg-zinc-900{background-color:#1c1a18 !important;}
+        .border-zinc-800{border-color:rgba(244,239,232,.10) !important;}
+        .bg-zinc-900\/80{background-color:rgba(20,18,17,.85) !important;}
+        .from-zinc-900\/80{--tw-gradient-from:rgba(20,18,17,.85) var(--tw-gradient-from-position) !important;}
+        .bg-zinc-900 .text-zinc-200{color:#e6dfd6 !important;}
+        .bg-zinc-900 .text-zinc-300{color:#d6cec5 !important;}
+
+        /* faixa de depoimentos: no lugar das faixas escuras nas bordas, um fade por máscara */
+        [class*="from-[#141211]"]{display:none !important;}
+        [style*="width:100vw"]{-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 9%,#000 91%,transparent 100%); mask-image:linear-gradient(to right,transparent 0%,#000 9%,#000 91%,transparent 100%);}
+
+        /* Bônus 01: no escuro o degradê "para branco" apagava a foto; agora só escurece o lado do texto */
+        @media (min-width: 768px){
+            [class*="md:to-white/90"]{background-image:linear-gradient(to right, rgba(26,24,22,.78) 0%, rgba(26,24,22,0) 45%) !important;}
+        }
+
+
+        /* ===== Personalidade ===== */
+        /* duas luzes: azul (Mark I) à esquerda e âmbar (Mark II) à direita, como os dois produtos */
+        body::after{width:1500px; height:700px; top:-260px;
+            background:radial-gradient(closest-side at 30% 45%, rgba(79,143,224,.14), rgba(79,143,224,0) 70%),
+                       radial-gradient(closest-side at 70% 45%, rgba(212,149,93,.24), rgba(212,149,93,0) 70%);}
+        /* grão de filme, bem leve */
+        body::before{content:""; position:fixed; inset:0; z-index:40; pointer-events:none; opacity:.05;
+            background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");}
+        /* destaque editorial nos títulos (Merriweather itálico, cor do produto) */
+        em.emph{color:#e6b07a;}
+        h2 .emph, h3 .emph{font-size:.96em;}
+        /* faixa âmbar com os módulos */
+        .ribbon{position:relative; left:50%; width:112vw; margin-left:-56vw; margin-top:4.5rem; padding:15px 0; overflow:hidden;
+            background:linear-gradient(180deg,#e7a46f 0%,#d4955d 100%); color:#2a1f16; transform:rotate(-1.2deg);
+            box-shadow:0 18px 50px -18px rgba(212,149,93,.55), inset 0 1px 0 rgba(255,255,255,.45);}
+        .ribbon-track{display:flex; width:max-content; gap:44px; animation:ribbon 60s linear infinite;}
+        .ribbon-track span{font-family:'Merriweather',Georgia,serif; font-style:italic; font-size:1.2rem; white-space:nowrap; display:flex; align-items:center; gap:44px;}
+        .ribbon-track span::after{content:"✦"; font-style:normal; font-size:.85rem;}
+        @keyframes ribbon{to{transform:translateX(-50%);}}
+        @media (prefers-reduced-motion: reduce){ .ribbon-track{animation:none;} }
+
+        /* título: Poppins é mais larga que a Inter, então a escala desce um degrau */
+        @media (min-width: 1024px) { h1 { font-size: 3.5rem !important; line-height: 1.0 !important; letter-spacing: -0.03em; } }
+        @media (max-width: 640px)  { h1 { font-size: 2rem !important; line-height: 1.12 !important; } }
+
+        html{scroll-behavior:smooth;}
+        .black-bar{position:relative;margin-top:-2rem;z-index:70;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;width:100%;padding:10px 16px;background:linear-gradient(90deg,#8f1d17,#c0281e 50%,#8f1d17);color:#fff4ec;font-size:13px;font-weight:500;text-align:center;letter-spacing:.01em;text-decoration:none;box-shadow:0 6px 24px -10px rgba(192,40,30,.8);}
+        .black-bar strong{font-weight:800;}
+        a.btn-black-red[href]{background:linear-gradient(135deg,#d33a2c,#a3221a) !important;color:#fff4ec !important;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 1px 2px rgba(0,0,0,.4),0 18px 50px -10px rgba(211,58,44,.75) !important;}
+        a.btn-black-red[href]:hover{filter:brightness(1.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 1px 2px rgba(0,0,0,.4),0 22px 64px -8px rgba(211,58,44,.9) !important;}
+        .urgency-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(192,40,30,.14);color:#ff8a7a;border:1px solid rgba(248,113,113,.45);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:700;letter-spacing:.02em;}
+        .urgency-dot{width:8px;height:8px;border-radius:999px;background:#ef4444;box-shadow:0 0 0 0 rgba(239,68,68,.7);animation:urg 1.6s infinite;}
+        @keyframes urg{0%{box-shadow:0 0 0 0 rgba(239,68,68,.7)}70%{box-shadow:0 0 0 10px rgba(239,68,68,0)}100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}}
+        @media (prefers-reduced-motion: reduce){.urgency-dot{animation:none;}}
+
+        .black-bar-tag{background:#fff4ec;color:#8f1d17;font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:11px;padding:3px 9px;border-radius:999px;}
+        .black-bar:hover{filter:brightness(1.08);}
+        @media (max-width:640px){.black-bar{font-size:12px;gap:8px;padding:9px 12px;}.black-bar-sep{display:none;}.black-bar-sub{display:block;font-size:11px;opacity:.85;margin-top:1px;}.black-bar>svg{display:none;}}
+
+        .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;transform:translateY(110%);transition:transform .35s ease;background:rgba(20,18,17,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(230,176,122,.3);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:12px;}
+        .sticky-cta.show{transform:none;}
+        @media (min-width:768px){.sticky-cta{display:none;}}
+        /* botão de compra: metal quente com filete de luz e texto escuro (contraste) */
+        a[href*="go.rodrigobaiao.com/pay/"],a.cta-btn{
+            color:#2a1f16 !important;
+            box-shadow:inset 0 1px 0 rgba(255,255,255,.55), 0 1px 2px rgba(0,0,0,.4), 0 18px 50px -10px rgba(212,149,93,.65) !important;
+        }
+        a[href*="go.rodrigobaiao.com/pay/"]:hover,a.cta-btn:hover{
+            box-shadow:inset 0 1px 0 rgba(255,255,255,.65), 0 1px 2px rgba(0,0,0,.4), 0 22px 64px -8px rgba(230,176,122,.85) !important;
+        }
+        @media (prefers-reduced-motion: reduce) { .animate-scroll, .animate-pulse-slow, .animate-ping { animation: none !important; } * { transition: none !important; } }
+
+
         /* Mobile Adjustments for Critical Paint */
         @media (max-width: 640px) {
             .hero-section { padding-top: 1.5rem; }
@@ -128,7 +221,6 @@
             h1 { font-size: 4rem !important; line-height: 0.95 !important; }
         }
     </style>
-
     <!-- 3. VTURB DEFER: Carregamento sem bloqueio -->
     <script type="text/javascript">
         var s = document.createElement("script");
@@ -136,9 +228,19 @@
         s.defer = true;
         document.head.appendChild(s);
     </script>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 
 <body class="min-h-screen bg-zinc-50 flex flex-col items-center justify-center relative pt-8 pb-16">
+    <!-- Black: faixa vermelha no topo -->
+    <a href="#oferta" class="black-bar">
+        <span class="black-bar-tag">Black</span>
+        <span><strong>Menor preço do ano</strong><span class="black-bar-sep"> · </span><span class="black-bar-sub">pode acabar a qualquer momento</span></span>
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+    </a>
+
 
     <!-- Glowing Orbs no Fundo -->
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
@@ -173,12 +275,6 @@
         <!-- Pre-Headline (Pill) -->
         <div
             class="animate-fade-up flex items-center gap-2 md:gap-3 bg-white/80 border border-zinc-200 rounded-full px-4 sm:px-6 py-2 shadow-sm backdrop-blur-sm mb-6 sm:mb-8 mx-auto w-max max-w-full">
-            <!-- Ping indicator light como GenLabs -->
-            <span class="relative flex h-2 w-2 shrink-0">
-                <span
-                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
-            </span>
             <span
                 class="text-[10px] sm:text-xs font-semibold text-zinc-500 tracking-widest uppercase text-center block">
                 Para criadores de conteúdo donos da <span class="text-zinc-800">Sony ZV-E10 Mark I ou Mark II</span>
@@ -187,11 +283,12 @@
 
         <!-- Headline (H1) -->
         <h1
-            class="animate-fade-up delay-100 text-center font-medium tracking-tighter text-zinc-900 text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] leading-[1.05] lg:leading-[0.95] mb-8 sm:mb-12 max-w-4xl mx-auto">
-            Você Gastou <span class="text-gradient font-bold drop-shadow-sm">R$ 5.000</span> na <span
-                class="whitespace-nowrap">ZV-E10</span> e Ainda Grava no <span
-                class="text-gradient font-bold drop-shadow-sm">Automático?</span>
-        </h1>
+            class="animate-fade-up delay-100 text-center font-medium tracking-tighter text-zinc-900 text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.05] lg:leading-[0.95] mb-6 sm:mb-7 max-w-4xl mx-auto">Grave com qualidade de cinema na <span class="whitespace-nowrap">ZV-E10.</span> <span class="text-gradient font-bold drop-shadow-sm emph">Do zero, passo a passo.</span></h1>
+        <ul class="animate-fade-up delay-100 mx-auto mb-10 sm:mb-12 px-4 flex flex-col gap-2.5 text-left w-fit max-w-full">
+            <li class="flex items-center gap-3 text-zinc-500 text-base sm:text-xl font-medium"><svg class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-red-400" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg><span class="line-through decoration-red-400/50">Gravar no automático e torcer pra dar certo.</span></li>
+            <li class="flex items-center gap-3 text-zinc-500 text-base sm:text-xl font-medium"><svg class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-red-400" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg><span class="line-through decoration-red-400/50">Perder tempo com tutorial solto.</span></li>
+            <li class="flex items-center gap-3 text-zinc-900 text-base sm:text-xl font-bold"><svg class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-orange-400" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>Configurar uma vez, do jeito certo.</span></li>
+        </ul>
 
         <!-- Container do Vídeo (Vturb) com sombra elegante e bordas refinadas -->
         <div class="animate-fade-up delay-200 w-full flex justify-center relative group">
@@ -235,14 +332,14 @@
 
             <!-- Vignette effects nas bordas (gradient fade) -->
             <div
-                class="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-[#fafafa] to-transparent z-10 pointer-events-none">
+                class="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-[#141211] to-transparent z-10 pointer-events-none">
             </div>
             <div
-                class="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-[#fafafa] to-transparent z-10 pointer-events-none">
+                class="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-[#141211] to-transparent z-10 pointer-events-none">
             </div>
 
             <p class="text-center text-xs sm:text-sm font-semibold text-zinc-400 uppercase tracking-widest mb-6 px-4">
-                Resultados reais de quem já domina a câmera</p>
+                Quem já destravou a ZV-E10 conta como ficou</p>
             <!-- Wrapper do scroll infinito -->
             <div class="flex animate-scroll w-max gap-4 sm:gap-6 px-4 hover:cursor-grab active:cursor-grabbing">
                 <!-- Set 1 -->
@@ -345,14 +442,65 @@
             </div>
         </div>
 
+<div class="w-full flex flex-col items-center px-4 mt-16 -mb-4">
+            <a href="#oferta" class="cta-btn group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 px-8 sm:px-12 py-5 sm:py-6 bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 bg-[length:200%_auto] text-white rounded-full font-bold text-lg sm:text-xl tracking-wide shadow-xl shadow-orange-500/40 hover:shadow-orange-500/60 hover:-translate-y-1 transition-all duration-300 animate-pulse-slow overflow-hidden"><span>QUERO A BLACK DO MZV</span><svg class="w-6 h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+            <p class="text-zinc-500 text-xs sm:text-sm font-medium mt-4 text-center">Black · 30% off no Pix · Acesso imediato</p>
+        </div>
+        <section class="w-full flex flex-col items-center px-4 mt-24 mb-16">
+<div class="w-full max-w-4xl">
+ <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-10 text-center">Esse protocolo é <em class="emph text-gradient">pra você?</em></h2>
+                <div class="relative w-full rounded-3xl overflow-hidden mb-8" style="height:clamp(230px,40vw,440px);box-shadow:0 0 0 1px rgba(230,176,122,.28),0 30px 60px -24px rgba(0,0,0,.8)">
+                    <img src="assets/img/fotos/frustrado.webp" alt="Criador frustrado com a câmera na mão" class="absolute inset-0 w-full h-full object-cover" style="object-position:50% 40%;transform:scale(1.38);transform-origin:0% 42%" loading="lazy" decoding="async" />
+                    <div class="absolute inset-0" style="background:linear-gradient(90deg,rgba(20,18,17,.95) 0%,rgba(20,18,17,.7) 30%,rgba(20,18,17,0) 58%)"></div>
+                    <div class="absolute inset-0 flex flex-col justify-center px-5 sm:px-10 max-w-[52%]">
+                        <p class="text-orange-400 text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-2">Se isso é você</p>
+                        <p class="text-xl sm:text-4xl font-bold leading-tight text-zinc-900">“Gravei, assisti e pensei: <em class="emph text-gradient">ficou ruim.</em>”</p>
+                    </div>
+                </div>
+ <div class="grid md:grid-cols-2 gap-6">
+  <div class="glass-panel rounded-3xl p-8"><p class="text-orange-400 text-xs font-bold tracking-widest uppercase mb-5">É pra você se…</p><ul class="space-y-4"><li class="flex gap-3 items-start text-zinc-600 text-sm sm:text-base leading-relaxed"><svg class="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Você tem uma ZV-E10 (Mark I ou II) e não tira dela o que vê nos outros.</span></li><li class="flex gap-3 items-start text-zinc-600 text-sm sm:text-base leading-relaxed"><svg class="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Você grava, assiste e pensa: <strong class="text-zinc-900">ficou ruim.</strong></span></li><li class="flex gap-3 items-start text-zinc-600 text-sm sm:text-base leading-relaxed"><svg class="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Você vive no automático, torcendo pra dar certo.</span></li><li class="flex gap-3 items-start text-zinc-600 text-sm sm:text-base leading-relaxed"><svg class="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Você já viu tutorial e <strong class="text-zinc-900">continua perdido.</strong></span></li><li class="flex gap-3 items-start text-zinc-600 text-sm sm:text-base leading-relaxed"><svg class="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Você já pensou em <strong class="text-zinc-900">desistir da câmera.</strong></span></li><li class="flex gap-3 items-start text-zinc-600 text-sm sm:text-base leading-relaxed"><svg class="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Você compra equipamento e <strong class="text-zinc-900">o vídeo continua igual.</strong></span></li></ul></div>
+  <div class="glass-panel rounded-3xl p-8"><p class="text-zinc-400 text-xs font-bold tracking-widest uppercase mb-5">Não é pra você se…</p><ul class="space-y-4"><li class="flex gap-3 items-start text-zinc-600 text-sm sm:text-base leading-relaxed"><svg class="w-5 h-5 text-zinc-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg><span>Você só quer uma dica solta.</span></li><li class="flex gap-3 items-start text-zinc-600 text-sm sm:text-base leading-relaxed"><svg class="w-5 h-5 text-zinc-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg><span>Você quer resultado sem abrir o menu.</span></li><li class="flex gap-3 items-start text-zinc-600 text-sm sm:text-base leading-relaxed"><svg class="w-5 h-5 text-zinc-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg><span>Você não vai colocar nada em prática.</span></li><li class="flex gap-3 items-start text-zinc-600 text-sm sm:text-base leading-relaxed"><svg class="w-5 h-5 text-zinc-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg><span>Você usa outra câmera, não a ZV-E10.</span></li><li class="flex gap-3 items-start text-zinc-600 text-sm sm:text-base leading-relaxed"><svg class="w-5 h-5 text-zinc-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg><span>Você ainda não tem a ZV-E10.</span></li></ul></div></div></div>
+        </section>
+                <section class="w-full flex flex-col items-center px-4 mb-16">
+            <div class="w-full max-w-3xl">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-3 text-center">Do erro ao <em class="emph text-gradient">acerto</em></h2>
+                <p class="text-zinc-500 text-sm md:text-base font-medium text-center mb-8">Na mesma câmera. Só muda a configuração.</p>
+                <div class="glass-panel rounded-3xl p-4 sm:p-6"><div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:.5rem;align-items:center" class="mb-4 text-center text-xs sm:text-sm font-bold uppercase tracking-wider"><div class="text-red-400">✕ Hoje</div><div class="w-8 sm:w-11"></div><div class="text-orange-400">✓ Com o protocolo</div></div><div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:.5rem;align-items:center" class="mb-3"><div class="flex items-center gap-1.5 sm:gap-3 rounded-2xl px-2 sm:px-4 py-3.5 sm:py-4 text-[12px] sm:text-xl leading-none whitespace-nowrap" style="background:rgba(239,68,68,.10);box-shadow:inset 0 0 0 1px rgba(248,113,113,.30)"><svg class="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 text-red-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 3v2m0 14v2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M3 12h2m14 0h2M5.6 18.4L7 17m10-10l1.4-1.4M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="text-zinc-600 line-through decoration-red-400/60">Pele estourada</span></div><div class="flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 rounded-full flex-shrink-0" style="background:linear-gradient(135deg,#e6b07a,#c48a55);box-shadow:0 0 0 4px rgba(196,138,85,.18),0 6px 18px -4px rgba(196,138,85,.6)"><svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="#141211" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 12h14m-6-6l6 6-6 6"/></svg></div><div class="flex items-center gap-1.5 sm:gap-3 rounded-2xl px-2 sm:px-4 py-3.5 sm:py-4 text-[12px] sm:text-xl leading-none whitespace-nowrap" style="background:rgba(196,138,85,.16);box-shadow:inset 0 0 0 1px rgba(230,176,122,.40)"><svg class="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 3v2m0 14v2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M3 12h2m14 0h2M5.6 18.4L7 17m10-10l1.4-1.4M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="text-zinc-900 font-bold">Pele natural</span></div></div><div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:.5rem;align-items:center" class="mb-3"><div class="flex items-center gap-1.5 sm:gap-3 rounded-2xl px-2 sm:px-4 py-3.5 sm:py-4 text-[12px] sm:text-xl leading-none whitespace-nowrap" style="background:rgba(239,68,68,.10);box-shadow:inset 0 0 0 1px rgba(248,113,113,.30)"><svg class="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 text-red-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5z"/></svg><span class="text-zinc-600 line-through decoration-red-400/60">Imagem cinza</span></div><div class="flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 rounded-full flex-shrink-0" style="background:linear-gradient(135deg,#e6b07a,#c48a55);box-shadow:0 0 0 4px rgba(196,138,85,.18),0 6px 18px -4px rgba(196,138,85,.6)"><svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="#141211" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 12h14m-6-6l6 6-6 6"/></svg></div><div class="flex items-center gap-1.5 sm:gap-3 rounded-2xl px-2 sm:px-4 py-3.5 sm:py-4 text-[12px] sm:text-xl leading-none whitespace-nowrap" style="background:rgba(196,138,85,.16);box-shadow:inset 0 0 0 1px rgba(230,176,122,.40)"><svg class="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5z"/></svg><span class="text-zinc-900 font-bold">Cor de cinema</span></div></div><div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:.5rem;align-items:center" class="mb-3"><div class="flex items-center gap-1.5 sm:gap-3 rounded-2xl px-2 sm:px-4 py-3.5 sm:py-4 text-[12px] sm:text-xl leading-none whitespace-nowrap" style="background:rgba(239,68,68,.10);box-shadow:inset 0 0 0 1px rgba(248,113,113,.30)"><svg class="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 text-red-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M7.5 3.75H6A2.25 2.25 0 003.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0120.25 6v1.5m0 9V18A2.25 2.25 0 0118 20.25h-1.5m-9 0H6A2.25 2.25 0 013.75 18v-1.5M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span class="text-zinc-600 line-through decoration-red-400/60">Foco fugindo</span></div><div class="flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 rounded-full flex-shrink-0" style="background:linear-gradient(135deg,#e6b07a,#c48a55);box-shadow:0 0 0 4px rgba(196,138,85,.18),0 6px 18px -4px rgba(196,138,85,.6)"><svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="#141211" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 12h14m-6-6l6 6-6 6"/></svg></div><div class="flex items-center gap-1.5 sm:gap-3 rounded-2xl px-2 sm:px-4 py-3.5 sm:py-4 text-[12px] sm:text-xl leading-none whitespace-nowrap" style="background:rgba(196,138,85,.16);box-shadow:inset 0 0 0 1px rgba(230,176,122,.40)"><svg class="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M7.5 3.75H6A2.25 2.25 0 003.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0120.25 6v1.5m0 9V18A2.25 2.25 0 0118 20.25h-1.5m-9 0H6A2.25 2.25 0 013.75 18v-1.5M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span class="text-zinc-900 font-bold">Foco no rosto</span></div></div><div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:.5rem;align-items:center" class="mb-3"><div class="flex items-center gap-1.5 sm:gap-3 rounded-2xl px-2 sm:px-4 py-3.5 sm:py-4 text-[12px] sm:text-xl leading-none whitespace-nowrap" style="background:rgba(239,68,68,.10);box-shadow:inset 0 0 0 1px rgba(248,113,113,.30)"><svg class="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 text-red-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg><span class="text-zinc-600 line-through decoration-red-400/60">Luz piscando</span></div><div class="flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 rounded-full flex-shrink-0" style="background:linear-gradient(135deg,#e6b07a,#c48a55);box-shadow:0 0 0 4px rgba(196,138,85,.18),0 6px 18px -4px rgba(196,138,85,.6)"><svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="#141211" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 12h14m-6-6l6 6-6 6"/></svg></div><div class="flex items-center gap-1.5 sm:gap-3 rounded-2xl px-2 sm:px-4 py-3.5 sm:py-4 text-[12px] sm:text-xl leading-none whitespace-nowrap" style="background:rgba(196,138,85,.16);box-shadow:inset 0 0 0 1px rgba(230,176,122,.40)"><svg class="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg><span class="text-zinc-900 font-bold">Vídeo limpo</span></div></div><div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:.5rem;align-items:center" class="mb-3"><div class="flex items-center gap-1.5 sm:gap-3 rounded-2xl px-2 sm:px-4 py-3.5 sm:py-4 text-[12px] sm:text-xl leading-none whitespace-nowrap" style="background:rgba(239,68,68,.10);box-shadow:inset 0 0 0 1px rgba(248,113,113,.30)"><svg class="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 text-red-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25z"/></svg><span class="text-zinc-600 line-through decoration-red-400/60">Arquivo preso</span></div><div class="flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 rounded-full flex-shrink-0" style="background:linear-gradient(135deg,#e6b07a,#c48a55);box-shadow:0 0 0 4px rgba(196,138,85,.18),0 6px 18px -4px rgba(196,138,85,.6)"><svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="#141211" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 12h14m-6-6l6 6-6 6"/></svg></div><div class="flex items-center gap-1.5 sm:gap-3 rounded-2xl px-2 sm:px-4 py-3.5 sm:py-4 text-[12px] sm:text-xl leading-none whitespace-nowrap" style="background:rgba(196,138,85,.16);box-shadow:inset 0 0 0 1px rgba(230,176,122,.40)"><svg class="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25z"/></svg><span class="text-zinc-900 font-bold">Arquivo no PC</span></div></div></div>
+                <h3 class="text-2xl md:text-3xl font-bold tracking-tight text-zinc-900 mt-14 mb-6 text-center">E por dentro, <em class="emph text-gradient">muda mais ainda</em></h3>
+                <div class="glass-panel rounded-3xl p-4 sm:p-6"><div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:.5rem;align-items:center" class="mb-4 text-center text-xs sm:text-sm font-bold uppercase tracking-wider"><div class="text-red-400">✕ Antes</div><div class="w-8 sm:w-11"></div><div class="text-orange-400">✓ Depois</div></div><div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:.5rem;align-items:center" class="mb-3"><div class="flex items-center gap-1.5 sm:gap-3 rounded-2xl px-2 sm:px-4 py-3.5 sm:py-4 text-[12px] sm:text-xl leading-none whitespace-nowrap" style="background:rgba(239,68,68,.10);box-shadow:inset 0 0 0 1px rgba(248,113,113,.30)"><svg class="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 text-red-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9 9.75h.008v.008H9V9.75zm6 0h.008v.008H15V9.75z"/></svg><span class="text-zinc-600 line-through decoration-red-400/60">Vergonha</span></div><div class="flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 rounded-full flex-shrink-0" style="background:linear-gradient(135deg,#e6b07a,#c48a55);box-shadow:0 0 0 4px rgba(196,138,85,.18),0 6px 18px -4px rgba(196,138,85,.6)"><svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="#141211" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 12h14m-6-6l6 6-6 6"/></svg></div><div class="flex items-center gap-1.5 sm:gap-3 rounded-2xl px-2 sm:px-4 py-3.5 sm:py-4 text-[12px] sm:text-xl leading-none whitespace-nowrap" style="background:rgba(196,138,85,.16);box-shadow:inset 0 0 0 1px rgba(230,176,122,.40)"><svg class="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9 9.75h.008v.008H9V9.75zm6 0h.008v.008H15V9.75z"/></svg><span class="text-zinc-900 font-bold">Orgulho</span></div></div><div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:.5rem;align-items:center" class="mb-3"><div class="flex items-center gap-1.5 sm:gap-3 rounded-2xl px-2 sm:px-4 py-3.5 sm:py-4 text-[12px] sm:text-xl leading-none whitespace-nowrap" style="background:rgba(239,68,68,.10);box-shadow:inset 0 0 0 1px rgba(248,113,113,.30)"><svg class="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 text-red-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/></svg><span class="text-zinc-600 line-through decoration-red-400/60">Dúvida</span></div><div class="flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 rounded-full flex-shrink-0" style="background:linear-gradient(135deg,#e6b07a,#c48a55);box-shadow:0 0 0 4px rgba(196,138,85,.18),0 6px 18px -4px rgba(196,138,85,.6)"><svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="#141211" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 12h14m-6-6l6 6-6 6"/></svg></div><div class="flex items-center gap-1.5 sm:gap-3 rounded-2xl px-2 sm:px-4 py-3.5 sm:py-4 text-[12px] sm:text-xl leading-none whitespace-nowrap" style="background:rgba(196,138,85,.16);box-shadow:inset 0 0 0 1px rgba(230,176,122,.40)"><svg class="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg><span class="text-zinc-900 font-bold">Confiança</span></div></div><div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:.5rem;align-items:center" class="mb-3"><div class="flex items-center gap-1.5 sm:gap-3 rounded-2xl px-2 sm:px-4 py-3.5 sm:py-4 text-[12px] sm:text-xl leading-none whitespace-nowrap" style="background:rgba(239,68,68,.10);box-shadow:inset 0 0 0 1px rgba(248,113,113,.30)"><svg class="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 text-red-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="text-zinc-600 line-through decoration-red-400/60">Arrependimento</span></div><div class="flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 rounded-full flex-shrink-0" style="background:linear-gradient(135deg,#e6b07a,#c48a55);box-shadow:0 0 0 4px rgba(196,138,85,.18),0 6px 18px -4px rgba(196,138,85,.6)"><svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="#141211" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 12h14m-6-6l6 6-6 6"/></svg></div><div class="flex items-center gap-1.5 sm:gap-3 rounded-2xl px-2 sm:px-4 py-3.5 sm:py-4 text-[12px] sm:text-xl leading-none whitespace-nowrap" style="background:rgba(196,138,85,.16);box-shadow:inset 0 0 0 1px rgba(230,176,122,.40)"><svg class="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="text-zinc-900 font-bold">Valeu a pena</span></div></div></div>
+                <p class="text-zinc-700 text-base sm:text-lg font-semibold text-center mt-8">Não é a câmera. É a configuração. E configuração se aprende. <em class="emph text-gradient">Passo a passo.</em></p>
+            </div>
+        </section>
+                        <section class="w-full flex flex-col items-center px-4 mt-20 mb-20">
+            <div class="w-full max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-4 text-center">O que é o <em class="emph text-gradient">MZV?</em></h2>
+                <p class="text-zinc-700 text-lg sm:text-xl font-medium text-center max-w-2xl mx-auto leading-snug mb-8">Um <strong class="text-zinc-900">protocolo de desbloqueio</strong> da <strong class="text-zinc-900">Sony ZV-E10</strong>: passo a passo, você libera o que a sua câmera já tem para gravar com qualidade de cinema.</p>
+                <p class="text-zinc-500 text-sm sm:text-base font-medium text-center max-w-xl mx-auto mb-8 -mt-4">Mesmo que você nunca tenha saído do automático, ou já tenha tentado tutorial e continue perdido.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10"><div class="rounded-2xl px-3 py-4 text-center" style="background:rgba(196,138,85,.10);box-shadow:inset 0 0 0 1px rgba(230,176,122,.25)"><p class="text-2xl sm:text-3xl font-extrabold text-gradient leading-none">7</p><p class="text-zinc-500 text-xs sm:text-sm font-medium mt-2 leading-tight">módulos do protocolo</p></div><div class="rounded-2xl px-3 py-4 text-center" style="background:rgba(196,138,85,.10);box-shadow:inset 0 0 0 1px rgba(230,176,122,.25)"><p class="text-2xl sm:text-3xl font-extrabold text-gradient leading-none">+35</p><p class="text-zinc-500 text-xs sm:text-sm font-medium mt-2 leading-tight">aulas passo a passo</p></div><div class="rounded-2xl px-3 py-4 text-center" style="background:rgba(196,138,85,.10);box-shadow:inset 0 0 0 1px rgba(230,176,122,.25)"><p class="text-2xl sm:text-3xl font-extrabold text-gradient leading-none">5</p><p class="text-zinc-500 text-xs sm:text-sm font-medium mt-2 leading-tight">bônus incluídos</p></div><div class="rounded-2xl px-3 py-4 text-center" style="background:rgba(196,138,85,.10);box-shadow:inset 0 0 0 1px rgba(230,176,122,.25)"><p class="text-2xl sm:text-3xl font-extrabold text-gradient leading-none">1 ano</p><p class="text-zinc-500 text-xs sm:text-sm font-medium mt-2 leading-tight">de acesso</p></div></div>
+            
+                <div class="mt-2 relative w-full max-w-3xl mx-auto rounded-3xl overflow-hidden" style="height:clamp(300px,56vw,430px);box-shadow:0 0 0 1px rgba(230,176,122,.28),0 30px 60px -24px rgba(0,0,0,.8)">
+                    <img src="assets/img/fotos/camera-na-mao.webp" alt="Mãos mexendo no menu da ZV-E10" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
+                    <div class="absolute inset-0" style="background:linear-gradient(0deg,rgba(20,18,17,.92) 0%,rgba(20,18,17,.2) 55%,rgba(20,18,17,0) 100%)"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-5 sm:p-8 text-center">
+                        <p class="text-zinc-900 text-lg sm:text-2xl font-bold mb-4">Tudo com a <em class="emph text-gradient">câmera na mão</em>, aula por aula</p>
+                        <div class="flex flex-wrap justify-center gap-2 sm:gap-3"><div class="flex items-center gap-2 rounded-full px-4 py-2.5 text-sm sm:text-base font-bold" style="background:rgba(20,18,17,.72);color:#f4efe8;backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px rgba(230,176,122,.35)"><svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178zM15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>Você assiste</span></div><div class="flex items-center gap-2 rounded-full px-4 py-2.5 text-sm sm:text-base font-bold" style="background:rgba(20,18,17,.72);color:#f4efe8;backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px rgba(230,176,122,.35)"><svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316zM16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/></svg><span>Aplica na hora</span></div><div class="flex items-center gap-2 rounded-full px-4 py-2.5 text-sm sm:text-base font-bold" style="background:rgba(20,18,17,.72);color:#f4efe8;backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px rgba(230,176,122,.35)"><svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg><span>Tira a dúvida</span></div></div>
+                    </div>
+                </div>
+                <div class="mt-16">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-3 text-center">É mais <em class="emph text-gradient">fácil</em> do que parece</h2>
+                    <p class="text-zinc-500 text-sm md:text-base font-medium text-center mb-10">Você não precisa entender de câmera. Só seguir.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-4 sm:divide-x sm:divide-zinc-200/60"><div class="flex flex-col items-center text-center px-3"><div class="w-14 h-14 rounded-full flex items-center justify-center mb-4" style="background:rgba(196,138,85,.14)"><svg class="w-8 h-8 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802"/></svg></div><h3 class="text-lg font-bold text-zinc-900 mb-1 leading-tight">Menu traduzido</h3><p class="text-zinc-500 text-sm leading-snug max-w-[14rem]">Eu traduzo o menu complicado da Sony no que importa, em linguagem simples.</p></div><div class="flex flex-col items-center text-center px-3"><div class="w-14 h-14 rounded-full flex items-center justify-center mb-4" style="background:rgba(196,138,85,.14)"><svg class="w-8 h-8 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"/></svg></div><h3 class="text-lg font-bold text-zinc-900 mb-1 leading-tight">Copie o meu setup</h3><p class="text-zinc-500 text-sm leading-snug max-w-[14rem]">Botões e atalhos prontos, é só repetir na sua.</p></div><div class="flex flex-col items-center text-center px-3"><div class="w-14 h-14 rounded-full flex items-center justify-center mb-4" style="background:rgba(196,138,85,.14)"><svg class="w-8 h-8 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3 class="text-lg font-bold text-zinc-900 mb-1 leading-tight">Checklist de bolso</h3><p class="text-zinc-500 text-sm leading-snug max-w-[14rem]">Bata o olho antes do REC e saiba que está certo.</p></div></div>
+                </div>
+            </div>
+        </section>
         <!-- SEGUNDA DOBRA: MÓDULOS (Accordions) -->
         <section class="w-full mt-24 mb-16 flex flex-col items-center">
 
             <!-- Frase de Transição -->
             <div class="animate-fade-up delay-300 mb-12 flex flex-col items-center text-center">
                 <p class="text-zinc-500 font-medium text-sm sm:text-base tracking-wide max-w-2xl px-4">
-                    Tudo que você acabou de ver está dentro do MZV. <br class="hidden sm:block" />
-                    <span class="text-zinc-900 font-semibold">Veja o que você recebe hoje:</span>
+                    Tudo isso está dentro do MZV. <br class="hidden sm:block" />
+                    <span class="text-zinc-900 font-semibold">Veja, módulo a módulo, o que você recebe:</span>
                 </p>
                 <div class="w-12 h-[1px] bg-zinc-300 mt-6"></div>
             </div>
@@ -363,7 +511,7 @@
                     class="inline-block py-1 px-3 rounded-full bg-orange-100/50 text-orange-600 text-[10px] font-bold tracking-widest uppercase mb-4 border border-orange-200/50">O
                     que está incluído</span>
                 <h2 class="text-3xl sm:text-4xl font-semibold text-zinc-900 tracking-tight leading-tight">
-                    O Protocolo de Desbloqueio ZV-E10 <br />
+                    O Protocolo de <em class="emph">Desbloqueio</em> ZV-E10 <br />
                     <span class="text-zinc-400 font-medium text-xl sm:text-2xl mt-1 block">— Completo (Mark I e Mark
                         II)</span>
                 </h2>
@@ -396,6 +544,7 @@
                                 <h3
                                     class="text-base sm:text-lg font-semibold text-zinc-900 group-hover:text-orange-600 transition-colors">
                                     PRIMEIROS PASSOS</h3>
+                                <p class="text-xs sm:text-sm text-zinc-500 font-medium mt-1">Configurar a câmera do zero</p>
                             </div>
                         </div>
                         <div
@@ -411,9 +560,7 @@
                         class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
                         <div
                             class="p-5 sm:p-6 pt-0 text-sm sm:text-base text-zinc-600 leading-relaxed border-t border-zinc-100 mt-2">
-                            Domando a fera do zero. Chega de medo de apertar o botão errado. Configure sua ZV-E10 do
-                            jeito certo logo no primeiro dia, entenda os segredos do seu sensor e blinde seus cartões
-                            contra a perda de arquivos.
+                            Chega de medo de apertar o botão errado. Configure a ZV-E10 do jeito certo no primeiro dia, escolha o cartão de memória certo e proteja seus arquivos.
                         </div>
                     </div>
                 </div>
@@ -443,6 +590,7 @@
                                 <h3
                                     class="text-base sm:text-lg font-semibold text-zinc-900 group-hover:text-orange-600 transition-colors">
                                     DECIFRANDO A MÁQUINA</h3>
+                                <p class="text-xs sm:text-sm text-zinc-500 font-medium mt-1">Entender o menu e o foco</p>
                             </div>
                         </div>
                         <div
@@ -458,9 +606,7 @@
                         class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
                         <div
                             class="p-5 sm:p-6 pt-0 text-sm sm:text-base text-zinc-600 leading-relaxed border-t border-zinc-100 mt-2">
-                            O adeus definitivo ao Automático. Traduzimos o menu complexo da Sony para um português
-                            claro. Assuma o controle total da luz, descubra funções ocultas e trave um Foco Automático
-                            que nunca te abandona.
+                            Chega de gravar no automático. O menu complicado da Sony traduzido em passos simples, controle total da luz e um foco que não te abandona.
                         </div>
                     </div>
                 </div>
@@ -493,6 +639,7 @@
                                 <h3
                                     class="text-base sm:text-lg font-semibold text-zinc-900 group-hover:text-orange-600 transition-colors">
                                     FUNDAMENTOS INVISÍVEIS</h3>
+                                <p class="text-xs sm:text-sm text-zinc-500 font-medium mt-1">Evitar erros de vídeo e áudio</p>
                             </div>
                         </div>
                         <div
@@ -508,9 +655,7 @@
                         class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
                         <div
                             class="p-5 sm:p-6 pt-0 text-sm sm:text-base text-zinc-600 leading-relaxed border-t border-zinc-100 mt-2">
-                            O fim dos vídeos arruinados. Evite luzes piscando e áudios estourados. Descubra as
-                            configurações secretas dos profissionais, garanta um som limpo e transfira arquivos pesados
-                            em tempo recorde.
+                            Chega de luz piscando e áudio estourado. As configurações que os profissionais usam, som limpo e arquivos no computador sem sofrer.
                         </div>
                     </div>
                 </div>
@@ -536,6 +681,7 @@
                                 <h3
                                     class="text-base sm:text-lg font-semibold text-zinc-900 group-hover:text-orange-600 transition-colors">
                                     WORKFLOW DE ALTA PERFORMANCE</h3>
+                                <p class="text-xs sm:text-sm text-zinc-500 font-medium mt-1">Deixar a câmera rápida de usar</p>
                             </div>
                         </div>
                         <div
@@ -551,9 +697,7 @@
                         class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
                         <div
                             class="p-5 sm:p-6 pt-0 text-sm sm:text-base text-zinc-600 leading-relaxed border-t border-zinc-100 mt-2">
-                            Sua ZV-E10 absurdamente rápida. Copie o meu setup pessoal de botões. Pare de caçar
-                            configurações no menu e tenha as funções que realmente importam a apenas um clique de
-                            distância.
+                            Tudo a um clique. Copie meu setup pessoal de botões e pare de caçar função no menu.
                         </div>
                     </div>
                 </div>
@@ -587,6 +731,7 @@
                                 <h3
                                     class="text-base sm:text-lg font-semibold text-zinc-900 group-hover:text-orange-600 transition-colors">
                                     A IMAGEM DE CINEMA</h3>
+                                <p class="text-xs sm:text-sm text-zinc-500 font-medium mt-1">Cor bonita e luz certa</p>
                             </div>
                         </div>
                         <div
@@ -602,9 +747,7 @@
                         class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
                         <div
                             class="p-5 sm:p-6 pt-0 text-sm sm:text-base text-zinc-600 leading-relaxed border-t border-zinc-100 mt-2">
-                            É aqui que seus R$5.000 se pagam. Adeus, imagem de celular. Domine o balanço de branco para
-                            tons de pele perfeitos, acerte a exposição sem estourar a luz e descubra o perfil de cor
-                            ideal para o seu conteúdo.
+                            É aqui que seus R$5.000 se pagam. Tom de pele certo, luz sem estourar e o perfil de cor ideal pro seu conteúdo.
                         </div>
                     </div>
                 </div>
@@ -638,6 +781,7 @@
                                 <h3
                                     class="text-base sm:text-lg font-semibold text-zinc-900 group-hover:text-orange-600 transition-colors">
                                     NÍVEL MESTRE: S-Log</h3>
+                                <p class="text-xs sm:text-sm text-zinc-500 font-medium mt-1">Imagem profissional (S-Log)</p>
                             </div>
                         </div>
                         <div
@@ -653,9 +797,7 @@
                         class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
                         <div
                             class="p-5 sm:p-6 pt-0 text-sm sm:text-base text-zinc-600 leading-relaxed border-t border-zinc-100 mt-2">
-                            O segredo da colorização avançada. Perca o medo da imagem "cinza". Aprenda a regra de ouro
-                            da exposição, grave no escuro sem ruídos e domine meu fluxo de cor em 5 passos para
-                            resultados cinematográficos.
+                            Perca o medo da imagem cinza. A regra de ouro da exposição, gravar no escuro sem ruído e meu fluxo de cor em 5 passos.
                         </div>
                     </div>
                 </div>
@@ -682,6 +824,7 @@
                                 <h3
                                     class="text-base sm:text-lg font-semibold text-zinc-900 group-hover:text-orange-600 transition-colors">
                                     HACKS E SOBREVIVÊNCIA</h3>
+                                <p class="text-xs sm:text-sm text-zinc-500 font-medium mt-1">Resolver problemas e imprevistos</p>
                             </div>
                         </div>
                         <div
@@ -697,9 +840,7 @@
                         class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
                         <div
                             class="p-5 sm:p-6 pt-0 text-sm sm:text-base text-zinc-600 leading-relaxed border-t border-zinc-100 mt-2">
-                            O que não está no manual. Drible o superaquecimento para gravar por horas, transforme seu
-                            celular em um monitor externo de luxo, elimine o "efeito gelatina" e limpe seu sensor com
-                            total segurança.
+                            O que não está no manual. Evite o superaquecimento, use o celular como monitor, acabe com o efeito gelatina e limpe o sensor com segurança.
                         </div>
                     </div>
                 </div>
@@ -707,8 +848,35 @@
             </div>
 
         </section>
-
         <!-- TERCEIRA DOBRA: BÔNUS -->
+                <section class="w-full flex flex-col items-center px-4 mb-24">
+            <div class="w-full max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-3 text-center">Por que não basta assistir <em class="emph text-gradient">tutorial solto</em></h2>
+                <p class="text-zinc-500 text-sm md:text-base font-medium text-center mb-3">O problema não é falta de informação. É falta de sistema.</p>
+                <p class="text-zinc-600 text-sm md:text-base text-center max-w-2xl mx-auto mb-10 leading-relaxed">O MZV é um <strong class="text-zinc-800">protocolo completo, feito só para a ZV-E10</strong>. Não é uma aula solta.</p>
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div class="rounded-3xl p-6 sm:p-8 flex flex-col" style="background:rgba(239,68,68,.06);box-shadow:inset 0 0 0 1px rgba(248,113,113,.25)">
+                        <p class="text-red-400 text-xs font-bold tracking-widest uppercase mb-1">Tutoriais soltos</p>
+                        <h3 class="text-xl sm:text-2xl font-bold text-zinc-900 mb-6">Pedaços de informação</h3>
+                        <div class="relative flex-grow w-full" style="min-height:272px"><span class="absolute inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold whitespace-nowrap" style="left:2%;top:0px;z-index:3;color:#e6dfd6;transform:rotate(-7deg);background:#2a2522;border:1px dashed rgba(244,239,232,.32);box-shadow:0 6px 14px -6px rgba(0,0,0,.6)"><span class="text-red-400 font-black">?</span>Vídeo de 2019</span><span class="absolute inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold whitespace-nowrap" style="left:58%;top:6px;z-index:2;color:#e6dfd6;transform:rotate(6deg);background:#2a2522;border:1px dashed rgba(244,239,232,.32);box-shadow:0 6px 14px -6px rgba(0,0,0,.6)"><span class="text-red-400 font-black">?</span>Qual lente?</span><span class="absolute inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold whitespace-nowrap" style="left:24%;top:34px;z-index:5;color:#e6dfd6;transform:rotate(4deg);background:#2a2522;border:1px dashed rgba(244,239,232,.32);box-shadow:0 6px 14px -6px rgba(0,0,0,.6)"><span class="text-red-400 font-black">?</span>Era pra Mark I ou II?</span><span class="absolute inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold whitespace-nowrap" style="left:0%;top:66px;z-index:4;color:#e6dfd6;transform:rotate(-4deg);background:#2a2522;border:1px dashed rgba(244,239,232,.32);box-shadow:0 6px 14px -6px rgba(0,0,0,.6)"><span class="text-red-400 font-black">?</span>Pulou o básico?</span><span class="absolute inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold whitespace-nowrap" style="left:50%;top:74px;z-index:6;color:#e6dfd6;transform:rotate(-6deg);background:#2a2522;border:1px dashed rgba(244,239,232,.32);box-shadow:0 6px 14px -6px rgba(0,0,0,.6)"><span class="text-red-400 font-black">?</span>Outra câmera</span><span class="absolute inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold whitespace-nowrap" style="left:16%;top:106px;z-index:7;color:#e6dfd6;transform:rotate(3deg);background:#2a2522;border:1px dashed rgba(244,239,232,.32);box-shadow:0 6px 14px -6px rgba(0,0,0,.6)"><span class="text-red-400 font-black">?</span>Ordem aleatória</span><span class="absolute inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold whitespace-nowrap" style="left:46%;top:128px;z-index:3;color:#e6dfd6;transform:rotate(7deg);background:#2a2522;border:1px dashed rgba(244,239,232,.32);box-shadow:0 6px 14px -6px rgba(0,0,0,.6)"><span class="text-red-400 font-black">?</span>Funciona mesmo?</span><span class="absolute inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold whitespace-nowrap" style="left:2%;top:142px;z-index:6;color:#e6dfd6;transform:rotate(-8deg);background:#2a2522;border:1px dashed rgba(244,239,232,.32);box-shadow:0 6px 14px -6px rgba(0,0,0,.6)"><span class="text-red-400 font-black">?</span>Já vi isso?</span><span class="absolute inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold whitespace-nowrap" style="left:20%;top:176px;z-index:8;color:#e6dfd6;transform:rotate(-3deg);background:#2a2522;border:1px dashed rgba(244,239,232,.32);box-shadow:0 6px 14px -6px rgba(0,0,0,.6)"><span class="text-red-400 font-black">?</span>Faltou um passo</span><span class="absolute inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold whitespace-nowrap" style="left:52%;top:192px;z-index:5;color:#e6dfd6;transform:rotate(5deg);background:#2a2522;border:1px dashed rgba(244,239,232,.32);box-shadow:0 6px 14px -6px rgba(0,0,0,.6)"><span class="text-red-400 font-black">?</span>Isso é pra mim?</span><span class="absolute inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold whitespace-nowrap" style="left:6%;top:214px;z-index:4;color:#e6dfd6;transform:rotate(6deg);background:#2a2522;border:1px dashed rgba(244,239,232,.32);box-shadow:0 6px 14px -6px rgba(0,0,0,.6)"><span class="text-red-400 font-black">?</span>Vídeo em inglês</span><span class="absolute inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold whitespace-nowrap" style="left:40%;top:232px;z-index:9;color:#e6dfd6;transform:rotate(-5deg);background:#2a2522;border:1px dashed rgba(244,239,232,.32);box-shadow:0 6px 14px -6px rgba(0,0,0,.6)"><span class="text-red-400 font-black">?</span>Qual configuração?</span></div>
+                        <p class="text-zinc-500 text-sm sm:text-base mt-6 leading-snug">Você junta peças de vários lugares e <strong class="text-zinc-700">não sabe se vão se encaixar.</strong></p>
+                    </div>
+                    <div class="rounded-3xl p-6 sm:p-8 flex flex-col" style="background:rgba(196,138,85,.10);box-shadow:inset 0 0 0 1px rgba(230,176,122,.40)">
+                        <p class="text-orange-400 text-xs font-bold tracking-widest uppercase mb-1">Protocolo ZV-E10</p>
+                        <h3 class="text-xl sm:text-2xl font-bold text-zinc-900 mb-6">Uma sequência só</h3>
+                        <ol class="relative flex-grow">
+                            <span class="absolute left-[17px] top-4 bottom-4 w-[2px]" style="background:linear-gradient(#e6b07a,rgba(196,138,85,.2))"></span>
+                            <li class="relative flex items-center gap-4 pb-4 last:pb-0"><span class="relative z-10 flex items-center justify-center w-9 h-9 rounded-full text-sm font-extrabold flex-shrink-0" style="background:linear-gradient(135deg,#e6b07a,#c48a55);color:#141211;box-shadow:0 0 0 4px rgba(196,138,85,.18)">1</span><span class="text-zinc-900 font-bold text-sm sm:text-lg leading-tight">Configurar do zero</span></li><li class="relative flex items-center gap-4 pb-4 last:pb-0"><span class="relative z-10 flex items-center justify-center w-9 h-9 rounded-full text-sm font-extrabold flex-shrink-0" style="background:linear-gradient(135deg,#e6b07a,#c48a55);color:#141211;box-shadow:0 0 0 4px rgba(196,138,85,.18)">2</span><span class="text-zinc-900 font-bold text-sm sm:text-lg leading-tight">Menu e foco</span></li><li class="relative flex items-center gap-4 pb-4 last:pb-0"><span class="relative z-10 flex items-center justify-center w-9 h-9 rounded-full text-sm font-extrabold flex-shrink-0" style="background:linear-gradient(135deg,#e6b07a,#c48a55);color:#141211;box-shadow:0 0 0 4px rgba(196,138,85,.18)">3</span><span class="text-zinc-900 font-bold text-sm sm:text-lg leading-tight">Erros de vídeo e áudio</span></li><li class="relative flex items-center gap-4 pb-4 last:pb-0"><span class="relative z-10 flex items-center justify-center w-9 h-9 rounded-full text-sm font-extrabold flex-shrink-0" style="background:linear-gradient(135deg,#e6b07a,#c48a55);color:#141211;box-shadow:0 0 0 4px rgba(196,138,85,.18)">4</span><span class="text-zinc-900 font-bold text-sm sm:text-lg leading-tight">Câmera rápida de usar</span></li><li class="relative flex items-center gap-4 pb-4 last:pb-0"><span class="relative z-10 flex items-center justify-center w-9 h-9 rounded-full text-sm font-extrabold flex-shrink-0" style="background:linear-gradient(135deg,#e6b07a,#c48a55);color:#141211;box-shadow:0 0 0 4px rgba(196,138,85,.18)">5</span><span class="text-zinc-900 font-bold text-sm sm:text-lg leading-tight">Imagem de cinema</span></li><li class="relative flex items-center gap-4 pb-4 last:pb-0"><span class="relative z-10 flex items-center justify-center w-9 h-9 rounded-full text-sm font-extrabold flex-shrink-0" style="background:linear-gradient(135deg,#e6b07a,#c48a55);color:#141211;box-shadow:0 0 0 4px rgba(196,138,85,.18)">6</span><span class="text-zinc-900 font-bold text-sm sm:text-lg leading-tight">S-Log</span></li><li class="relative flex items-center gap-4 pb-4 last:pb-0"><span class="relative z-10 flex items-center justify-center w-9 h-9 rounded-full text-sm font-extrabold flex-shrink-0" style="background:linear-gradient(135deg,#e6b07a,#c48a55);color:#141211;box-shadow:0 0 0 4px rgba(196,138,85,.18)">7</span><span class="text-zinc-900 font-bold text-sm sm:text-lg leading-tight">Imprevistos</span></li>
+                        </ol>
+                        <p class="text-zinc-600 text-sm sm:text-base mt-6 leading-snug">Cada passo prepara o próximo. <strong class="text-zinc-900">Você sempre sabe onde está.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+<div class="w-full flex flex-col items-center px-4 mb-24 -mt-6">
+            <a href="#oferta" class="cta-btn group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 px-8 sm:px-12 py-5 sm:py-6 bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 bg-[length:200%_auto] text-white rounded-full font-bold text-lg sm:text-xl tracking-wide shadow-xl shadow-orange-500/40 hover:shadow-orange-500/60 hover:-translate-y-1 transition-all duration-300 animate-pulse-slow overflow-hidden"><span>QUERO ENTRAR NO PROTOCOLO</span><svg class="w-6 h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+            <p class="text-zinc-500 text-xs sm:text-sm font-medium mt-4 text-center">Black · R$ 291,90 no Pix · Mark I e Mark II</p>
+        </div>
         <section class="w-full mt-10 mb-24 flex flex-col items-center">
 
             <!-- Headline Bônus -->
@@ -725,11 +893,10 @@
                 <h2 class="text-4xl sm:text-5xl font-bold text-zinc-900 tracking-tight leading-tight mb-4">
                     O Que Mais Você Leva <br class="hidden sm:block" />
                     <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-400">Totalmente
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-400 emph">Totalmente
                         de Graça</span>
                 </h2>
-                <p class="text-zinc-500 text-base sm:text-lg max-w-2xl mx-auto font-medium">Garanta sua vaga hoje e
-                    libere imediatamente estes 5 bônus premium projetados para acelerar ainda mais seus resultados.</p>
+                <p class="text-zinc-500 text-base sm:text-lg max-w-2xl mx-auto font-medium">Ao entrar hoje, você libera na hora estes 5 bônus premium, feitos para acelerar ainda mais os seus resultados.</p>
             </div>
 
             <!-- Grid de Bônus -->
@@ -765,14 +932,13 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M5 13l4 4L19 7"></path>
                                 </svg>
-                                Gratuito Hoje
+                                Grátis
                             </span>
                         </div>
                         <h3 class="text-2xl sm:text-3xl font-bold text-zinc-900 mb-4 leading-tight">Destravando a Edição
                             no DaVinci Resolve</h3>
                         <p class="text-zinc-600 font-medium text-sm sm:text-base leading-relaxed mb-6">O passo a passo
-                            exato para importar, cortar, colorir e exportar seus arquivos da ZV-E10 com a qualidade
-                            máxima que só o software de Hollywood entrega.</p>
+                            exato para importar, cortar, colorir e exportar seus arquivos da ZV-E10 com a qualidade máxima, no mesmo software usado em produções de cinema.</p>
                     </div>
                 </div>
 
@@ -880,11 +1046,11 @@
                     </div>
                 </div>
 
-                <!-- Bônus 5: Aulas ao Vivo -->
+                <!-- Bônus 5: Envie seu vídeo -->
                 <div
                     class="glass-panel group rounded-[2rem] overflow-hidden border border-zinc-200/60 relative flex flex-col hover:shadow-xl transition-all duration-500 bg-white/40">
-                    <img src="assets/img/features/ao-vivo.webp" alt="Aulas ao Vivo"
-                        class="w-full h-auto rounded-xl object-cover shadow-sm group-hover:scale-105 transition-transform duration-500"
+                    <img src="assets/img/features/ao-vivo.webp" alt="Envie seu vídeo e receba feedback"
+                        class="w-full h-48 sm:h-56 object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-700 z-0"
                         onerror="this.src='https://placehold.co/400x300/f4f4f5/ea580c?text=Ao+Vivo'" loading="lazy" decoding="async" />
                     <div class="absolute top-0 right-0 p-4 z-10">
                         <div
@@ -900,7 +1066,7 @@
                         class="relative z-20 p-6 sm:p-8 flex flex-col flex-grow bg-gradient-to-t from-white via-white to-white/90">
                         <span class="text-[10px] font-bold uppercase tracking-wider text-orange-500 mb-1">Bônus
                             05</span>
-                        <h3 class="text-xl font-bold text-zinc-900 mb-2 leading-tight">Aulas ao Vivo <br> Quinzenais
+                        <h3 class="text-xl font-bold text-zinc-900 mb-2 leading-tight">Envie Seu Vídeo <br> e Receba Feedback
                         </h3>
                         <div class="mb-3 flex items-center gap-2">
                             <span class="text-xs font-bold text-red-500 line-through">De R$ 497,00</span>
@@ -910,17 +1076,54 @@
                                         d="M5 13l4 4L19 7"></path>
                                 </svg> Grátis</span>
                         </div>
-                        <p class="text-zinc-500 text-sm font-medium">Acesso VIP aos nossos encontros ao vivo. Traga seus
-                            vídeos, tire suas dúvidas ao vivo.</p>
+                        <p class="text-zinc-500 text-sm font-medium">Gravou com o que aprendeu? Envie o seu vídeo e receba um feedback direto do Rodrigo, com o que ajustar para a sua imagem ficar ainda melhor.</p>
                     </div>
                 </div>
 
             </div>
 
         </section>
-
         <!-- QUARTA DOBRA: OFERTA E CHECKOUT -->
-        <section class="w-full mt-10 flex flex-col items-center">
+                <section class="w-full flex flex-col items-center px-4 mb-24">
+            <div class="w-full max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-10 text-center">Você não fica <em class="emph text-gradient">sozinho</em></h2>
+                <div class="grid md:grid-cols-3 gap-8 md:gap-4 md:divide-x md:divide-zinc-200/60">
+                    <div class="flex flex-col items-center text-center px-4 py-2"><div class="w-14 h-14 rounded-full flex items-center justify-center mb-4" style="background:rgba(196,138,85,.14)"><svg class="w-7 h-7 flex-shrink-0 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg></div><h3 class="text-lg font-bold text-zinc-900 mb-1">Tire dúvidas</h3><p class="text-zinc-500 text-sm leading-relaxed max-w-[16rem]">Pergunte em qualquer aula. Eu leio e respondo.</p></div>
+                    <div class="flex flex-col items-center text-center px-4 py-2"><div class="w-14 h-14 rounded-full flex items-center justify-center mb-4" style="background:rgba(196,138,85,.14)"><svg class="w-7 h-7 flex-shrink-0 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9A2.25 2.25 0 0013.5 5.25h-9A2.25 2.25 0 002.25 7.5v9A2.25 2.25 0 004.5 18.75z"/></svg></div><h3 class="text-lg font-bold text-zinc-900 mb-1">Receba feedback</h3><p class="text-zinc-500 text-sm leading-relaxed max-w-[16rem]">Envie seu vídeo e ouça do Rodrigo o que ajustar.</p></div>
+                    <div class="flex flex-col items-center text-center px-4 py-2"><div class="w-14 h-14 rounded-full flex items-center justify-center mb-4" style="background:rgba(196,138,85,.14)"><svg class="w-7 h-7 flex-shrink-0 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg></div><h3 class="text-lg font-bold text-zinc-900 mb-1">Sem gasto à toa</h3><p class="text-zinc-500 text-sm leading-relaxed max-w-[16rem]">Pra começar, só a ZV-E10. Eu mostro o que vale comprar depois.</p></div>
+                </div>
+            </div>
+        </section>
+        <section class="w-full flex flex-col items-center px-4 mb-24">
+            <div class="w-full max-w-4xl grid md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] gap-8 md:gap-12 items-center">
+                <div class="relative w-full rounded-3xl overflow-hidden mx-auto" style="aspect-ratio:4/5;max-width:420px;box-shadow:0 0 0 1px rgba(230,176,122,.28),0 30px 60px -24px rgba(0,0,0,.8)">
+                    <img src="assets/img/fotos/rodrigo-apresenta.webp" alt="Rodrigo Baião" class="absolute inset-0 w-full h-full object-cover" style="object-position:50% 20%" loading="lazy" decoding="async" />
+                    <div class="absolute inset-x-0 bottom-0 h-1/3" style="background:linear-gradient(0deg,rgba(20,18,17,.75),rgba(20,18,17,0))"></div>
+                </div>
+                <div class="text-center md:text-left">
+                    <p class="text-orange-400 text-xs font-bold tracking-widest uppercase mb-3">Quem vai te guiar</p>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-5">Eu sou o Rodrigo <em class="emph text-gradient">Baião</em></h2>
+                    <p class="text-zinc-600 text-base sm:text-lg leading-relaxed mb-3">Ensino audiovisual pra criador de conteúdo. Passo os macetes, mas o principal é te ensinar a <strong class="text-zinc-900">entender o que você tem</strong> e a usar do jeito certo.</p>
+                    <p class="text-zinc-600 text-base sm:text-lg leading-relaxed mb-5">Uso a ZV-E10 <strong class="text-zinc-900">todos os dias</strong> no meu conteúdo. O que está aqui dentro é o que eu aplico na minha própria câmera.</p>
+                    <div class="grid grid-cols-1 gap-3 mb-6 max-w-[11rem] mx-auto md:mx-0"><div class="rounded-2xl px-4 py-3 text-center md:text-left" style="background:rgba(196,138,85,.10);box-shadow:inset 0 0 0 1px rgba(230,176,122,.25)"><p class="text-2xl sm:text-3xl font-extrabold text-gradient leading-none">+4.200</p><p class="text-zinc-500 text-xs sm:text-sm font-medium mt-1.5 leading-tight">alunos</p></div></div>
+                    <p class="text-zinc-900 font-semibold text-lg sm:text-xl leading-snug mb-6">Conhecimento vale mais que <em class="emph text-gradient">equipamento.</em></p>
+                    <div class="flex flex-wrap gap-3 justify-center md:justify-start"><a href="https://www.youtube.com/rodrigobaiao" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-bold transition-transform hover:-translate-y-0.5" style="background:rgba(196,138,85,.14);color:#e6b07a;box-shadow:inset 0 0 0 1px rgba(230,176,122,.4)"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg><span>Meu canal</span></a><a href="https://www.instagram.com/rodrigobaiaoo/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-bold transition-transform hover:-translate-y-0.5" style="background:rgba(196,138,85,.14);color:#e6b07a;box-shadow:inset 0 0 0 1px rgba(230,176,122,.4)"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>@rodrigobaiaoo</span></a></div>
+                </div>
+            </div>
+        </section>
+        <section id="oferta" class="w-full mt-10 flex flex-col items-center scroll-mt-6">
+
+            <!-- Contexto e Reflexão -->
+            <div class="w-full max-w-xl px-4 mb-12 mx-auto">
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4"><svg class="w-7 h-7 mt-0.5 flex-shrink-0 text-red-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg><p class="text-zinc-500 text-sm sm:text-lg leading-snug">Fechar a página e seguir no automático, com imagens comuns.</p></div>
+                    <div class="flex items-start gap-4"><svg class="w-7 h-7 mt-0.5 flex-shrink-0 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg><p class="text-zinc-900 font-semibold text-sm sm:text-lg leading-snug"><span class="text-gradient">Dominar os menus</span> e destravar a qualidade de cinema da sua câmera.</p></div>
+                </div>
+            </div>
+
+            <div class="w-full max-w-3xl text-center px-4 mb-14 mx-auto">
+ <p class="text-zinc-500 text-sm uppercase tracking-widest font-semibold mb-3">O investimento mais difícil você já fez</p>
+ <p class="text-2xl md:text-3xl font-bold text-zinc-900 leading-snug">Agora falta <em class="emph text-gradient">usar de verdade</em> o que você já comprou. Na Black, o MZV sai por <span class="text-gradient">R$ 291,90 no Pix</span>, menos de 6% do valor da câmera.</p></div>
 
             <!-- Preço e Oferta Principal -->
             <div class="text-center w-full px-4 mb-16 relative">
@@ -945,34 +1148,42 @@
                                 </div>
                             </span>
                         </div>
+                        <div class="flex items-center gap-3 text-zinc-400 font-medium opacity-70 mt-1">
+                            <span>Preço normal:</span>
+                            <span class="line-through">12x de R$ 41,75 ou R$ 417</span>
+                        </div>
                     </div>
 
                     <div
                         class="inline-flex items-center justify-center bg-orange-100 text-orange-600 px-6 py-2 rounded-full text-sm font-bold tracking-widest uppercase mb-8 shadow-sm border border-orange-200">
-                        HOJE, POR ASSISTIR ATÉ AQUI:
+                        Black · menor preço do ano
                     </div>
 
                     <div class="flex flex-col items-center mb-10">
                         <div class="flex items-start text-zinc-900 justify-center">
                             <span class="text-3xl font-bold mt-2 mr-2">12x de</span>
-                            <span
-                                class="text-6xl sm:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-600 drop-shadow-sm">R$41<span
-                                    class="text-4xl sm:text-6xl">,75</span></span>
+                            <span class="text-6xl sm:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-600 drop-shadow-sm">R$30<span class="text-4xl sm:text-6xl">,13</span></span>
                         </div>
+                        <p class="text-zinc-500 text-sm sm:text-base font-medium mt-2">ou R$ 312,75 à vista no cartão</p>
                         <p
                             class="text-zinc-500 font-medium text-lg mt-4 w-full flex items-center justify-center gap-3 before:content-[''] before:h-px before:w-16 before:bg-zinc-200 after:content-[''] after:h-px after:w-16 after:bg-zinc-200">
-                            ou <strong class="text-zinc-800">R$417 à vista</strong>
+                            ou <strong class="text-zinc-800">R$ 291,90 no Pix</strong>
                         </p>
                     </div>
 
+                    <div class="mb-6 flex flex-col items-center gap-2">
+                        <span class="urgency-pill"><span class="urgency-dot"></span>Preço de Black · pode acabar a qualquer momento</span>
+                        <p class="text-zinc-500 text-xs sm:text-sm font-medium">Quando a Black acabar, o preço volta para R$ 417.</p>
+                    </div>
+
                     <!-- Botão de Venda -->
-                    <a href="https://go.rodrigobaiao.com/pay/mzvpdr"
-                        class="group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 px-8 sm:px-12 py-5 sm:py-6 bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 bg-[length:200%_auto] text-white rounded-full font-bold text-lg sm:text-xl tracking-wide shadow-xl shadow-orange-500/40 hover:shadow-orange-500/60 hover:-translate-y-1 transition-all duration-300 animate-pulse-slow overflow-hidden">
+                    <a href="https://go.rodrigobaiao.com/pay/mzv-black"
+                        class="btn-black-red group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 px-8 sm:px-12 py-5 sm:py-6 bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 bg-[length:200%_auto] text-white rounded-full font-bold text-lg sm:text-xl tracking-wide shadow-xl shadow-orange-500/40 hover:shadow-orange-500/60 hover:-translate-y-1 transition-all duration-300 animate-pulse-slow overflow-hidden">
                         <!-- Shine effect -->
                         <div
                             class="absolute inset-0 -translate-x-full group-hover:animate-shine bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12">
                         </div>
-                        <span>QUERO DOMINAR MINHA ZV-E10 AGORA</span>
+                        <span>QUERO APROVEITAR A BLACK</span>
                         <svg class="w-6 h-6 transition-transform group-hover:translate-x-1" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
@@ -1003,93 +1214,38 @@
                             </div>
                         </div>
                         <p class="text-zinc-400 text-xs font-medium tracking-wide">PIX e Cartão de Crédito</p>
+                        <p class="text-zinc-500 text-xs sm:text-sm font-semibold"><span class="text-orange-400">7 dias</span> pra desistir sem motivo · <span class="text-orange-400">30 dias</span> de garantia de resultado</p>
                     </div>
 
                 </div>
             </div>
-
-            <!-- Contexto e Reflexão -->
-            <div class="w-full max-w-4xl px-4 mb-24">
-                <div
-                    class="glass-panel flex flex-col items-center justify-center p-8 sm:p-12 lg:p-14 rounded-[2.5rem] bg-zinc-900 border border-zinc-800 shadow-xl relative overflow-hidden text-center mx-auto">
-                    <!-- Subtle Glow effect -->
-                    <div
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(ellipse_at_center,rgba(234,88,12,0.08)_0%,transparent_70%)] pointer-events-none">
-                    </div>
-
-                    <div class="relative z-10 w-full flex flex-col items-center">
-                        <div
-                            class="flex flex-col gap-4 text-zinc-400 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto font-medium">
-                            <p>
-                                Você pode fechar essa página e continuar gravando no automático, subutilizando uma
-                                câmera de alto nível entregando imagens comuns.
-                            </p>
-                            <p>
-                                Ou você pode <strong class="text-zinc-200">dominar os menus</strong> e destravar a
-                                verdadeira qualidade de cinema que o seu equipamento possui.
-                            </p>
-                        </div>
-
-                        <div class="p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm w-full relative">
-                            <p class="text-zinc-300 font-semibold italic text-base mb-3 max-w-xl mx-auto">
-                                "Criadores com equipamentos mais baratos estão entregando vídeos melhores. A diferença
-                                não é a câmera, é saber configurá-la."
-                            </p>
-                            <span
-                                class="inline-block pt-2 text-orange-400/90 font-bold uppercase tracking-widest text-xs">—
-                                A escolha é sua.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </section>
-
-        <!-- QUINTA DOBRA: GARANTIA INCONDICIONAL -->
+        <!-- QUINTA DOBRA: GARANTIA 7 DIAS + 30 DIAS CONDICIONAL -->
         <section class="w-full flex justify-center px-4 pb-24">
-            <div
-                class="glass-panel w-full max-w-4xl rounded-3xl border-2 border-orange-100 bg-white shadow-xl flex flex-col sm:flex-row items-center overflow-hidden">
-                <!-- Lado Celo / Icone -->
-                <div
-                    class="w-full sm:w-2/5 md:w-1/3 bg-orange-50 p-10 flex flex-col justify-center items-center h-full border-b sm:border-b-0 sm:border-r border-orange-100 relative">
-                    <div
-                        class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmOThhMjIiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')] opacity-50 z-0">
-                    </div>
-                    <div class="z-10 relative flex items-center justify-center">
-                        <div class="absolute w-32 h-32 bg-orange-300 rounded-full blur-[40px] opacity-40"></div>
-                        <img src="https://api.iconify.design/solar:shield-check-bold-duotone.svg?color=%23ea580c"
-                            alt="Garantia" loading="lazy" decoding="async" class="w-24 h-24 sm:w-28 sm:h-28 drop-shadow-md relative z-10" loading="lazy" decoding="async" />
-                    </div>
-                    <h4
-                        class="text-4xl font-black tracking-tighter text-orange-600 mt-4 relative z-10 text-center leading-none">
-                        7 DIAS</h4>
-                    <p class="text-[10px] font-bold uppercase tracking-widest text-orange-400 mt-1 relative z-10">
-                        Garantia Total</p>
+            <div class="w-full max-w-4xl flex flex-col items-center text-center">
+                <div class="relative flex flex-col items-center mb-5">
+                    <div class="absolute w-32 h-32 bg-orange-300 rounded-full blur-[40px] opacity-30"></div>
+                    <img src="https://api.iconify.design/solar/shield-check-bold-duotone.svg?color=%23d9a56f" alt="Garantia" loading="lazy" decoding="async" class="w-20 h-20 sm:w-24 sm:h-24 relative z-10" />
                 </div>
-
-                <!-- Lado Texto -->
-                <div
-                    class="w-full sm:w-3/5 md:w-2/3 p-8 sm:p-12 flex flex-col justify-center bg-white/60 backdrop-blur-sm">
-                    <h3 class="text-2xl sm:text-3xl font-bold text-zinc-900 mb-4 tracking-tight">Risco Zero. Devolução
-                        Implacável.</h3>
-                    <p class="text-zinc-600 text-sm sm:text-base leading-relaxed mb-6 font-medium">Entre no Protocolo,
-                        assista as primeiras aulas e teste as configurações na sua câmera. Se por qualquer motivo –
-                        achar que sua imagem não melhorou ou simplesmente decidir que não é o seu momento – você tem
-                        <strong class="text-zinc-900">7 dias corridos</strong> para pedir reembolso.</p>
-                    <p class="text-zinc-600 text-sm sm:text-base leading-relaxed font-medium">É só mandar um único
-                        e-mail para o suporte e eu devolvo 100% do seu dinheiro. Sem ressentimentos, sem letras miúdas
-                        ou perguntas inconvenientes.</p>
+                <h3 class="text-3xl sm:text-4xl font-bold text-zinc-900 mb-12 tracking-tight">Risco zero. <em class="emph text-gradient">Duas garantias.</em></h3>
+                <div class="w-full flex flex-col md:flex-row items-stretch justify-center gap-10 md:gap-6 mb-14">
+                    <div class="flex-1 text-center"><p class="leading-none"><span class="text-6xl sm:text-7xl font-black tracking-tighter text-gradient">7</span><span class="text-xl sm:text-2xl font-bold text-orange-400 ml-2">dias</span></p><p class="text-zinc-900 font-bold text-lg sm:text-xl mt-3 mb-1">Desista sem dar motivo</p><p class="text-zinc-500 text-sm sm:text-base leading-snug max-w-[17rem] mx-auto">Não era o que você esperava? Peça o dinheiro de volta.</p></div><div class="hidden md:flex items-center justify-center w-10 h-10 rounded-full flex-shrink-0 self-center" style="background:linear-gradient(135deg,#e6b07a,#c48a55);box-shadow:0 0 0 4px rgba(196,138,85,.18)"><svg class="w-5 h-5" fill="none" stroke="#141211" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 12h14m-6-6l6 6-6 6"/></svg></div>
+                    <div class="flex-1 text-center"><p class="leading-none"><span class="text-6xl sm:text-7xl font-black tracking-tighter text-gradient">30</span><span class="text-xl sm:text-2xl font-bold text-orange-400 ml-2">dias</span></p><p class="text-zinc-900 font-bold text-lg sm:text-xl mt-3 mb-1">Garantia de resultado</p><p class="text-zinc-500 text-sm sm:text-base leading-snug max-w-[17rem] mx-auto">Fez a sua parte e a sua imagem não melhorou? Eu devolvo 100%.</p></div>
+                </div>
+                <h4 class="text-2xl sm:text-3xl font-bold text-zinc-900 tracking-tight mb-3">O método é meu. <em class="emph text-gradient">O resultado é de quem aplica.</em></h4>
+                <p class="text-zinc-500 text-base sm:text-lg mb-8 max-w-xl">A garantia é para quem coloca a mão na câmera:</p>
+                <div class="grid sm:grid-cols-3 gap-4 sm:gap-8 w-full max-w-2xl mb-8">
+                    <div class="flex items-center gap-3 justify-center"><svg class="w-6 h-6 flex-shrink-0 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"/></svg><span class="text-zinc-700 text-sm sm:text-base font-semibold">Assista às aulas</span></div><div class="flex items-center gap-3 justify-center"><svg class="w-6 h-6 flex-shrink-0 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg><span class="text-zinc-700 text-sm sm:text-base font-semibold">Tire suas dúvidas</span></div><div class="flex items-center gap-3 justify-center"><svg class="w-6 h-6 flex-shrink-0 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9A2.25 2.25 0 0013.5 5.25h-9A2.25 2.25 0 002.25 7.5v9A2.25 2.25 0 004.5 18.75z"/></svg><span class="text-zinc-700 text-sm sm:text-base font-semibold">Mostre seu vídeo</span></div>
                 </div>
             </div>
         </section>
-
         <!-- SEXTA DOBRA: FAQ (Perguntas Frequentes) Minimalista -->
-        <section class="w-full flex justify-center px-4 pb-32">
+        <section class="w-full flex justify-center px-4 pb-20">
             <div class="w-full max-w-3xl">
                 <!-- FAQ Header -->
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-3">
-                        Perguntas Frequentes
+                        Perguntas <em class="emph">Frequentes</em>
                     </h2>
                     <p class="text-zinc-500 text-sm md:text-base font-medium">Ficou com alguma dúvida?</p>
                 </div>
@@ -1115,18 +1271,18 @@
                         <div
                             class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
                             <div class="pb-5 px-2 sm:px-4 text-zinc-600 text-sm leading-relaxed">
-                                Sim. Na plataforma você escolhe qual conteúdo específico para a sua câmera.
+                                Sim. Dentro da plataforma você escolhe o conteúdo da sua versão e vê só o que serve para a sua câmera.
                             </div>
                         </div>
                     </div>
 
-                    <!-- FAQ Item 2 -->
+                    <!-- FAQ Item extra -->
                     <div
                         class="faq-item group border-b border-zinc-200/60 overflow-hidden cursor-pointer transition-colors hover:bg-zinc-50/50">
                         <div class="faq-header flex items-center justify-between py-5 px-2 sm:px-4 select-none">
                             <h3
                                 class="text-base sm:text-lg font-semibold text-zinc-800 group-hover:text-orange-600 transition-colors">
-                                O curso é para iniciantes?</h3>
+                                Preciso comprar mais alguma coisa?</h3>
                             <div
                                 class="faq-icon text-zinc-400 group-hover:text-orange-500 transition-colors duration-300 w-5 h-5 flex-shrink-0 ml-4 flex items-center justify-center">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1138,7 +1294,53 @@
                         <div
                             class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
                             <div class="pb-5 px-2 sm:px-4 text-zinc-600 text-sm leading-relaxed">
-                                Sim! O curso é projetado para todos os níveis de habilidade. Começamos com o básico e
+                                Para começar, você precisa da sua ZV-E10. No protocolo eu mostro, sem pressa e sem empurrar compra, qual cartão de memória faz sentido e o que vale (ou não) comprar depois. O guia de compras está nos bônus.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item extra -->
+                    <div
+                        class="faq-item group border-b border-zinc-200/60 overflow-hidden cursor-pointer transition-colors hover:bg-zinc-50/50">
+                        <div class="faq-header flex items-center justify-between py-5 px-2 sm:px-4 select-none">
+                            <h3
+                                class="text-base sm:text-lg font-semibold text-zinc-800 group-hover:text-orange-600 transition-colors">
+                                E se eu não gostar?</h3>
+                            <div
+                                class="faq-icon text-zinc-400 group-hover:text-orange-500 transition-colors duration-300 w-5 h-5 flex-shrink-0 ml-4 flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 4v16m8-8H4"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div
+                            class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
+                            <div class="pb-5 px-2 sm:px-4 text-zinc-600 text-sm leading-relaxed">
+                                Nos primeiros 7 dias você pode desistir da compra sem precisar de motivo. Até 30 dias, a garantia de resultado vale para quem fez a sua parte: assistir às aulas, tirar dúvidas e enviar um vídeo. Os termos completos estão na plataforma.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div
+                        class="faq-item group border-b border-zinc-200/60 overflow-hidden cursor-pointer transition-colors hover:bg-zinc-50/50">
+                        <div class="faq-header flex items-center justify-between py-5 px-2 sm:px-4 select-none">
+                            <h3
+                                class="text-base sm:text-lg font-semibold text-zinc-800 group-hover:text-orange-600 transition-colors">
+                                O protocolo é para iniciantes?</h3>
+                            <div
+                                class="faq-icon text-zinc-400 group-hover:text-orange-500 transition-colors duration-300 w-5 h-5 flex-shrink-0 ml-4 flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 4v16m8-8H4"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div
+                            class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
+                            <div class="pb-5 px-2 sm:px-4 text-zinc-600 text-sm leading-relaxed">
+                                Sim! O protocolo é projetado para todos os níveis de habilidade. Começamos com o básico e
                                 progredimos para técnicas mais avançadas.
                             </div>
                         </div>
@@ -1173,7 +1375,7 @@
                         <div class="faq-header flex items-center justify-between py-5 px-2 sm:px-4 select-none">
                             <h3
                                 class="text-base sm:text-lg font-semibold text-zinc-800 group-hover:text-orange-600 transition-colors">
-                                Como acesso o curso?</h3>
+                                Como acesso o protocolo?</h3>
                             <div
                                 class="faq-icon text-zinc-400 group-hover:text-orange-500 transition-colors duration-300 w-5 h-5 flex-shrink-0 ml-4 flex items-center justify-center">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1208,7 +1410,7 @@
                         <div
                             class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
                             <div class="pb-5 px-2 sm:px-4 text-zinc-600 text-sm leading-relaxed">
-                                Pix e cartão de crédito em até 12x.
+                                Na Black, o melhor preço é no Pix: R$ 291,90. No cartão, R$ 312,75 à vista ou 12x de R$ 30,13 (com juros da operadora).
                             </div>
                         </div>
                     </div>
@@ -1219,7 +1421,7 @@
                         <div class="faq-header flex items-center justify-between py-5 px-2 sm:px-4 select-none">
                             <h3
                                 class="text-base sm:text-lg font-semibold text-zinc-800 group-hover:text-orange-600 transition-colors">
-                                Há algum suporte durante o curso?</h3>
+                                Há algum suporte durante o protocolo?</h3>
                             <div
                                 class="faq-icon text-zinc-400 group-hover:text-orange-500 transition-colors duration-300 w-5 h-5 flex-shrink-0 ml-4 flex items-center justify-center">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1231,31 +1433,7 @@
                         <div
                             class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
                             <div class="pb-5 px-2 sm:px-4 text-zinc-600 text-sm leading-relaxed">
-                                Sim, em todas as aulas você pode fazer perguntas e receber feedback.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 7 -->
-                    <div
-                        class="faq-item group border-b border-zinc-200/60 overflow-hidden cursor-pointer transition-colors hover:bg-zinc-50/50">
-                        <div class="faq-header flex items-center justify-between py-5 px-2 sm:px-4 select-none">
-                            <h3
-                                class="text-base sm:text-lg font-semibold text-zinc-800 group-hover:text-orange-600 transition-colors">
-                                Quando acontecem as aulas ao vivo?</h3>
-                            <div
-                                class="faq-icon text-zinc-400 group-hover:text-orange-500 transition-colors duration-300 w-5 h-5 flex-shrink-0 ml-4 flex items-center justify-center">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 4v16m8-8H4"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <div
-                            class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
-                            <div class="pb-5 px-2 sm:px-4 text-zinc-600 text-sm leading-relaxed">
-                                A cada 15 dias. Você pode enviar dúvidas com antecedência e acompanhar ao vivo ou pela
-                                gravação.
+                                Sim. Em todas as aulas você pode fazer perguntas e receber feedback.
                             </div>
                         </div>
                     </div>
@@ -1279,7 +1457,7 @@
                             class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
                             <div class="pb-5 px-2 sm:px-4 text-zinc-600 text-sm leading-relaxed">
                                 O problema não é falta de informação, é falta de sistema. O Protocolo organiza tudo em
-                                uma sequência lógica que tutoriais soltos nunca vão te dar.
+                                uma sequência lógica, do básico ao S-Log, que tutoriais soltos nunca vão te dar.
                             </div>
                         </div>
                     </div>
@@ -1287,9 +1465,34 @@
                 </div>
             </div>
         </section> <!-- Fim FAQ -->
+<section id="cta-final" class="w-full flex flex-col items-center px-4 pb-24 pt-4">
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-3 text-center">Sua ZV-E10 já é boa. <em class="emph text-gradient">Falta só configurar.</em></h2>
+            <p class="text-zinc-500 text-sm md:text-base font-medium text-center mb-8">Black: R$ 291,90 no Pix, ou 12x de R$ 30,13 no cartão.</p>
+            <a href="https://go.rodrigobaiao.com/pay/mzv-black" class="group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 px-8 sm:px-12 py-5 sm:py-6 bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 bg-[length:200%_auto] text-white rounded-full font-bold text-lg sm:text-xl tracking-wide shadow-xl shadow-orange-500/40 hover:shadow-orange-500/60 hover:-translate-y-1 transition-all duration-300 animate-pulse-slow overflow-hidden"><span>QUERO APROVEITAR A BLACK</span><svg class="w-6 h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+            <p class="text-zinc-500 text-xs sm:text-sm font-medium mt-4 text-center"><span class="text-orange-400 font-semibold">7 dias</span> pra desistir sem motivo · <span class="text-orange-400 font-semibold">30 dias</span> de garantia de resultado</p>
+        </section>
 
         </div>
     </main>
+    <!-- barra fixa (celular) -->
+    <div id="sticky-cta" class="sticky-cta" aria-hidden="true">
+        <div class="leading-tight"><p class="text-[10px] font-semibold uppercase tracking-widest text-zinc-500">Black · 30% off no Pix</p><p class="text-base font-extrabold text-gradient">R$ 291,90 no Pix</p></div>
+        <a href="#oferta" class="cta-btn inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-bold" style="background:linear-gradient(135deg,#e6b07a,#c48a55);color:#2a1f16;box-shadow:0 10px 30px -10px rgba(212,149,93,.8)">Quero a Black <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a>
+    </div>
+    <script>
+    (function(){var bar=document.getElementById('sticky-cta');if(!bar)return;var hide=false,past=false;
+    function upd(){var on=past&&!hide&&window.innerWidth<768;bar.classList.toggle('show',on);bar.setAttribute('aria-hidden',on?'false':'true');}
+    var vid=document.querySelector('vturb-smartplayer')||document.querySelector('h1');
+    window.addEventListener('scroll',function(){if(!vid)return;var r=vid.getBoundingClientRect();past=r.bottom<0;upd();},{passive:true});
+    if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){hide=en.some(function(e){return e.isIntersecting;})||Array.prototype.some.call(document.querySelectorAll('#oferta,#cta-final'),function(el){var r=el.getBoundingClientRect();return r.top<window.innerHeight&&r.bottom>0;});upd();},{threshold:0});
+    ['oferta','cta-final'].forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});}
+    window.addEventListener('resize',upd);})();
+    </script>
+    <footer class="relative z-10 w-full px-4 pb-12 -mt-6 flex flex-col items-center text-center">
+        <img class="logo-ds mb-5" src="assets/ds/logo-horizontal-claro.png" alt="Rodrigo Baião" width="90" height="24" loading="lazy" />
+        <p class="text-xs text-zinc-500 leading-relaxed">© 2026 por Rodrigo Baião<br>44.997.331/0001-13 - FICTUS CONTENT PRODUCOES LTDA</p>
+        <p class="text-[11px] text-zinc-500 leading-relaxed max-w-2xl mt-5 opacity-80">Aviso legal: este site não faz parte do site do Facebook ou Facebook Inc. Além disso, este site NÃO é endossado pelo Facebook de forma alguma. FACEBOOK é uma marca comercial da FACEBOOK, Inc. Todas as informações dos visitantes, como nome e e-mail, são protegidas e não serão compartilhadas, divulgadas ou vendidas para terceiros.</p>
+    </footer>
 
     <!-- Scripts de Interatividade (Lazy Loaded 3s para Performance Elite) -->
     <script>
@@ -1350,10 +1553,11 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    fontFamily: { sans: ['Poppins', 'system-ui', 'sans-serif'] },
                     colors: {
-                        zinc: { 50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 900: '#18181b' },
-                        orange: { 400: '#fb923c', 500: '#f97316', 600: '#ea580c' }
+                        white: '#1a1816',
+                          zinc: { 50: '#141211', 100: '#1a1816', 200: '#2c2824', 300: '#3d3833', 400: '#9a938c', 500: '#aca59d', 600: '#c4bcb3', 700: '#d6cec5', 800: '#ece6dc', 900: '#f4efe8' },
+                        orange: { 50: '#241b14', 100: '#32261c', 200: '#5a3f27', 300: '#a66f3c', 400: '#e6b07a', 500: '#d4955d', 600: '#f0c89c' }
                     },
                     boxShadow: {
                         'hero': '0 25px 50px -12px rgba(0, 0, 0, 0.05)',
