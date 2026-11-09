@@ -184,7 +184,10 @@
         @media (max-width: 640px)  { h1 { font-size: 2rem !important; line-height: 1.12 !important; } }
 
         html{scroll-behavior:smooth;}
-        .esconder{display:none !important;}
+        /* Picture in Picture da Vturb: nada em volta do player pode ter transform ou backdrop-filter, senão o mini player fica preso */
+        @keyframes vturbPipFade{from{opacity:0}to{opacity:1}}
+        .vturb-pip-fade{animation:vturbPipFade .8s ease forwards;position:relative;z-index:50;}
+        .vturb-pip-glass{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
         /* tipografia: quebras de linha mais bonitas */
         h1,h2,h3,h4{text-wrap:balance;}
         p,li,figcaption{text-wrap:pretty;}
@@ -339,7 +342,7 @@
         </ul>
 
         <!-- Container do Vídeo (Vturb) com sombra elegante e bordas refinadas -->
-        <div class="animate-fade-up delay-200 w-full flex justify-center relative group">
+        <div class="vturb-pip-fade delay-200 w-full flex justify-center relative group">
 
             <!-- Glow Effect on hover atrás do vídeo (Subtle) -->
             <div
@@ -347,7 +350,7 @@
             </div>
 
             <div
-                class="w-full glass-panel subtle-overlay rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 shadow-xl-soft border border-white/40 flex flex-col items-center justify-center relative overflow-hidden">
+                class="vturb-pip-glass w-full glass-panel subtle-overlay rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 shadow-xl-soft border border-white/40 flex flex-col items-center justify-center relative overflow-hidden">
 
                 <!-- Inner Reflection do vidro -->
                 <div class="absolute inset-0 rounded-[2rem] shadow-inner-glow pointer-events-none"></div>
@@ -374,8 +377,7 @@
             </div>
         </div>
 
-        <!-- Tudo abaixo do vídeo aparece aos 10min45s (Vturb: displayHiddenElements) -->
-        <div class="esconder w-full">
+        <div class="w-full">
         <!-- Seção de Depoimentos Scrollável (Logo abaixo do vídeo) -->
         <div>
         <div class="animate-fade-up delay-300 mt-16 sm:mt-20 relative" style="width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;overflow:hidden;">
@@ -1523,10 +1525,10 @@
         </section>
 
         </div>
-        </div> <!-- fim .esconder -->
+        </div>
     </main>
     <!-- barra fixa (celular) -->
-    <div class="esconder">
+    <div>
     <div id="sticky-cta" class="sticky-cta" aria-hidden="true">
         <div class="leading-tight"><p class="text-[10px] font-semibold uppercase tracking-widest text-zinc-500">Black · 30% off no Pix</p><p class="text-base font-extrabold text-gradient"><span class="nw">R$ 291,90</span> no Pix</p></div>
         <a href="#oferta" class="cta-btn inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-bold" style="background:linear-gradient(135deg,#e6b07a,#c48a55);color:#2a1f16;box-shadow:0 10px 30px -10px rgba(212,149,93,.8)">Quero a Black <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a>
@@ -1599,24 +1601,6 @@
 
             }, 3000); // 3 segundos para scripts secundários
         });
-    </script>
-
-    <script>
-        // Vturb: mostra o conteúdo escondido aos 10min45s do vídeo
-        (function () {
-            var delaySeconds = 645; // 10:45
-            var checkPlayer = setInterval(function () {
-                var player = document.querySelector("vturb-smartplayer");
-                if (player) {
-                    clearInterval(checkPlayer);
-                    player.addEventListener("player:ready", function () {
-                        player.displayHiddenElements(delaySeconds, [".esconder"], {
-                            persist: true
-                        });
-                    });
-                }
-            }, 500);
-        })();
     </script>
 </body>
 
